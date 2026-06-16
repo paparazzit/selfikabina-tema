@@ -2,11 +2,43 @@
 
 <?php
 $novosti_header_image = has_post_thumbnail() ? get_the_post_thumbnail_url(get_the_ID(), 'full') : '';
+$novosti_tip_terms = get_the_terms(get_the_ID(), 'novosti_tip');
+$novosti_tip_class = 'novosti-tip-default';
+
+if ($novosti_tip_terms && !is_wp_error($novosti_tip_terms)) {
+    $novosti_tip_values = array();
+
+    foreach ($novosti_tip_terms as $term) {
+        $novosti_tip_values[] = sanitize_title(remove_accents($term->name));
+        $novosti_tip_values[] = sanitize_title(remove_accents($term->slug));
+    }
+
+    $novosti_tip_string = implode(' ', $novosti_tip_values);
+
+    if (
+        strpos($novosti_tip_string, 'poslovni') !== false ||
+        strpos($novosti_tip_string, 'corporate') !== false
+    ) {
+        $novosti_tip_class = 'novosti-tip-business';
+    } elseif (
+        strpos($novosti_tip_string, 'promo') !== false ||
+        strpos($novosti_tip_string, 'promoc') !== false
+    ) {
+        $novosti_tip_class = 'novosti-tip-promo';
+    } elseif (
+        strpos($novosti_tip_string, 'rodjendan') !== false ||
+        strpos($novosti_tip_string, 'rodendan') !== false ||
+        strpos($novosti_tip_string, 'svadba') !== false ||
+        strpos($novosti_tip_string, 'privat') !== false
+    ) {
+        $novosti_tip_class = 'novosti-tip-private';
+    }
+}
 ?>
 
 <main>
 
-    <header class="header_posts header_novosti novosti-single-header<?php echo $novosti_header_image ? ' has-featured-bg' : ''; ?>"<?php if ($novosti_header_image) : ?> style="background-image: url('<?php echo esc_url($novosti_header_image); ?>');"<?php endif; ?>>
+    <header class="header_posts header_novosti novosti-single-header <?php echo esc_attr($novosti_tip_class); ?><?php echo $novosti_header_image ? ' has-featured-bg' : ''; ?>"<?php if ($novosti_header_image) : ?> style="background-image: url('<?php echo esc_url($novosti_header_image); ?>');"<?php endif; ?>>
         <hgroup>
             <h1>
                 <?php the_title(); ?>
@@ -18,7 +50,7 @@ $novosti_header_image = has_post_thumbnail() ? get_the_post_thumbnail_url(get_th
     </span>
 
     <?php
-   $categories = get_the_terms(get_the_ID(), 'novosti_tip');
+   $categories = $novosti_tip_terms;
     if ($categories && !is_wp_error($categories)) :
         $cat = $categories[0];
     ?>
