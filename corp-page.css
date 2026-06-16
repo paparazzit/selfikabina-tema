@@ -1,0 +1,774 @@
+/* =====================================================
+   KORPORATIVNI DOGADJAJI — corp-page.css
+   Putanja: /wp-content/themes/foto-kabina/corp-page.css
+
+   Učitava se samo na stranici korporativni-dogadjaji
+   via functions.php (vidi uputstvo ispod)
+   ===================================================== */
+
+/* --- GLOBALNO ZA OVU STRANICU --- */
+.page-template-page-korporativni .entry-content,
+body.page-id-ZAMENI_SA_ID .entry-content {
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+/* --- HERO COVER --- */
+.sk-hero-cover {
+  min-height: 92vh !important;
+  position: relative;
+}
+
+.sk-hero-cover .wp-block-cover__inner-container {
+  max-width: 780px;
+  padding: 40px 48px;
+}
+
+.sk-hero-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(224,59,58,0.15);
+  border: 1px solid rgba(224,59,58,0.4);
+  color: #FF8A89;
+  border-radius: 100px;
+  padding: 6px 18px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  width: fit-content;
+}
+
+.sk-hero-badge::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background: #E03B3A;
+  border-radius: 50%;
+  display: block;
+  flex-shrink: 0;
+}
+
+.sk-hero-cover h1 {
+  font-size: clamp(36px, 5vw, 58px) !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  letter-spacing: -1.5px !important;
+  line-height: 1.08 !important;
+  margin-bottom: 20px !important;
+}
+
+.sk-hero-cover h1 em {
+  font-style: normal;
+  color: #E03B3A;
+}
+
+.sk-hero-cover .sk-hero-sub {
+  font-size: 17px;
+  color: rgba(255,255,255,0.6);
+  line-height: 1.7;
+  max-width: 520px;
+  margin-bottom: 36px !important;
+}
+
+/* Hero stats row */
+.sk-hero-stats {
+  display: flex;
+  gap: 40px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.sk-hero-stat-num {
+  display: block;
+  font-size: 34px;
+  font-weight: 800;
+  color: #ffffff;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+.sk-hero-stat-label {
+  display: block;
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  margin-top: 4px;
+  letter-spacing: 0.03em;
+}
+
+/* Hero buttons */
+.sk-hero-cover .wp-block-buttons {
+  gap: 12px !important;
+  flex-wrap: wrap;
+}
+
+.sk-hero-cover .wp-block-button__link {
+  border-radius: 8px !important;
+  padding: 14px 28px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+}
+
+.sk-btn-primary .wp-block-button__link {
+  background: #E03B3A !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.sk-btn-ghost .wp-block-button__link {
+  background: transparent !important;
+  color: rgba(255,255,255,0.8) !important;
+  border: 1px solid rgba(255,255,255,0.25) !important;
+}
+
+/* --- TRUST BAR --- */
+.sk-trust-bar {
+  background: #152233 !important;
+  border-top: 1px solid rgba(255,255,255,0.07) !important;
+  border-bottom: 1px solid rgba(255,255,255,0.07) !important;
+  padding: 20px 64px !important;
+}
+
+.sk-trust-bar p {
+  font-size: 11px !important;
+  color: rgba(255,255,255,0.3) !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.1em !important;
+  margin: 0 0 12px !important;
+}
+
+.sk-trust-logos {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 8px !important;
+  justify-content: flex-start !important;
+}
+
+.sk-trust-logo {
+  background: rgba(255,255,255,0.06) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  color: rgba(255,255,255,0.55) !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  padding: 6px 14px !important;
+  border-radius: 4px !important;
+  display: inline-block !important;
+}
+
+/* --- SECTION COMMONS --- */
+.sk-section {
+  padding: 88px 64px !important;
+}
+
+.sk-section-gray {
+  background: #F7F8FA !important;
+}
+
+.sk-section-dark {
+  background: #0D1B2A !important;
+}
+
+.sk-eyebrow {
+  display: block !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.14em !important;
+  text-transform: uppercase !important;
+  color: #E03B3A !important;
+  margin-bottom: 12px !important;
+}
+
+.sk-section-dark .sk-eyebrow {
+  color: #FF8A89 !important;
+}
+
+.sk-section .wp-block-heading:first-of-type,
+.sk-h2 {
+  font-size: clamp(28px, 3.5vw, 40px) !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.8px !important;
+  line-height: 1.15 !important;
+  margin-bottom: 14px !important;
+  color: #0D1B2A !important;
+}
+
+.sk-section-dark .wp-block-heading,
+.sk-section-dark .sk-h2 {
+  color: #ffffff !important;
+}
+
+.sk-section-sub {
+  font-size: 16px !important;
+  color: #6B7280 !important;
+  line-height: 1.7 !important;
+  max-width: 560px !important;
+  margin-bottom: 52px !important;
+}
+
+.sk-section-dark .sk-section-sub {
+  color: rgba(255,255,255,0.45) !important;
+}
+
+/* --- PROBLEM CARDS --- */
+.sk-problem-card {
+  background: #ffffff !important;
+  border: 1px solid #E8EAF0 !important;
+  border-radius: 12px !important;
+  padding: 32px 28px !important;
+  position: relative !important;
+  overflow: hidden !important;
+}
+
+.sk-problem-card::before {
+  content: '' !important;
+  position: absolute !important;
+  top: 0; left: 0; right: 0 !important;
+  height: 3px !important;
+  background: #E03B3A !important;
+}
+
+.sk-problem-icon {
+  font-size: 32px !important;
+  display: block !important;
+  margin-bottom: 16px !important;
+  line-height: 1 !important;
+}
+
+.sk-problem-card .wp-block-heading {
+  font-size: 18px !important;
+  font-weight: 700 !important;
+  color: #0D1B2A !important;
+  margin-bottom: 10px !important;
+}
+
+.sk-problem-card p {
+  font-size: 14px !important;
+  color: #6B7280 !important;
+  line-height: 1.65 !important;
+}
+
+.sk-solution-bar {
+  background: #E6F5ED !important;
+  border: 1px solid #A8D5BC !important;
+  border-radius: 10px !important;
+  padding: 20px 28px !important;
+  margin-top: 24px !important;
+}
+
+.sk-solution-bar p {
+  font-size: 15px !important;
+  color: #1A7A4A !important;
+  font-weight: 500 !important;
+  margin: 0 !important;
+}
+
+/* --- USE CASE CARDS --- */
+.sk-usecase-card {
+  background: #F7F8FA !important;
+  border: 1px solid #E8EAF0 !important;
+  border-radius: 12px !important;
+  padding: 28px 24px !important;
+}
+
+.sk-usecase-card.family-day {
+  border-color: #A8D5BC !important;
+  background: #E6F5ED !important;
+}
+
+.sk-usecase-icon {
+  font-size: 32px !important;
+  display: block !important;
+  margin-bottom: 14px !important;
+  line-height: 1 !important;
+}
+
+.sk-usecase-card .wp-block-heading {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: #0D1B2A !important;
+  margin-bottom: 8px !important;
+}
+
+.sk-usecase-card p {
+  font-size: 13px !important;
+  color: #6B7280 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+.sk-family-badge {
+  display: inline-block !important;
+  background: #1A7A4A !important;
+  color: #fff !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  padding: 3px 10px !important;
+  border-radius: 100px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 10px !important;
+}
+
+/* --- HOW IT WORKS STEPS --- */
+.sk-steps-row {
+  display: flex !important;
+  gap: 0 !important;
+  position: relative !important;
+  margin-bottom: 64px !important;
+}
+
+.sk-steps-row::after {
+  content: '' !important;
+  position: absolute !important;
+  top: 28px !important;
+  left: calc(16.66% + 16px) !important;
+  right: calc(16.66% + 16px) !important;
+  height: 1px !important;
+  background: rgba(255,255,255,0.1) !important;
+  pointer-events: none !important;
+}
+
+.sk-step {
+  flex: 1 !important;
+  text-align: center !important;
+  padding: 0 24px !important;
+  position: relative !important;
+  z-index: 1 !important;
+}
+
+.sk-step-num {
+  width: 56px !important;
+  height: 56px !important;
+  background: #E03B3A !important;
+  border-radius: 50% !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  color: #fff !important;
+  margin: 0 auto 20px !important;
+}
+
+.sk-step .wp-block-heading {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  margin-bottom: 10px !important;
+}
+
+.sk-step p {
+  font-size: 13px !important;
+  color: rgba(255,255,255,0.45) !important;
+  line-height: 1.65 !important;
+}
+
+/* --- FEATURE CARDS --- */
+.sk-feat-card {
+  background: rgba(255,255,255,0.04) !important;
+  border: 1px solid rgba(255,255,255,0.09) !important;
+  border-radius: 12px !important;
+  padding: 24px !important;
+}
+
+.sk-feat-card.prestige {
+  border-color: rgba(201,150,42,0.45) !important;
+  background: rgba(201,150,42,0.08) !important;
+}
+
+.sk-feat-card.keychain {
+  border-color: rgba(26,122,74,0.45) !important;
+  background: rgba(26,122,74,0.08) !important;
+}
+
+.sk-feat-icon {
+  font-size: 28px !important;
+  display: block !important;
+  margin-bottom: 14px !important;
+  line-height: 1 !important;
+}
+
+.sk-feat-card .wp-block-heading {
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  color: #ffffff !important;
+  margin-bottom: 8px !important;
+}
+
+.sk-feat-card.prestige .wp-block-heading { color: #F5E6C0 !important; }
+.sk-feat-card.keychain .wp-block-heading { color: #7FD9A8 !important; }
+
+.sk-feat-card p {
+  font-size: 13px !important;
+  color: rgba(255,255,255,0.45) !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+.sk-feat-new {
+  display: inline-block !important;
+  background: rgba(201,150,42,0.2) !important;
+  color: #C9962A !important;
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  padding: 2px 8px !important;
+  border-radius: 100px !important;
+  margin-left: 6px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  vertical-align: middle !important;
+}
+
+/* --- STATS BAR --- */
+.sk-stats-row {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  gap: 1px !important;
+  background: rgba(255,255,255,0.08) !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+  margin-bottom: 64px !important;
+}
+
+.sk-stat-cell {
+  background: #152233 !important;
+  padding: 40px 24px !important;
+  text-align: center !important;
+}
+
+.sk-stat-cell-num {
+  display: block !important;
+  font-size: 48px !important;
+  font-weight: 800 !important;
+  color: #E03B3A !important;
+  letter-spacing: -2px !important;
+  line-height: 1 !important;
+  margin-bottom: 8px !important;
+}
+
+.sk-stat-cell-label {
+  display: block !important;
+  font-size: 13px !important;
+  color: rgba(255,255,255,0.4) !important;
+  line-height: 1.4 !important;
+}
+
+/* --- CLIENT LOGOS --- */
+.sk-clients-label {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.1em !important;
+  text-transform: uppercase !important;
+  color: rgba(255,255,255,0.25) !important;
+  text-align: center !important;
+  margin-bottom: 24px !important;
+}
+
+.sk-clients-row {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 10px !important;
+  justify-content: center !important;
+}
+
+.sk-client-chip {
+  background: rgba(255,255,255,0.05) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  color: rgba(255,255,255,0.5) !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  padding: 8px 18px !important;
+  border-radius: 6px !important;
+  display: inline-block !important;
+}
+
+/* --- PACKAGE CARDS --- */
+.sk-pkg-card {
+  background: #ffffff !important;
+  border: 1px solid #E8EAF0 !important;
+  border-radius: 16px !important;
+  padding: 36px 32px !important;
+  position: relative !important;
+}
+
+.sk-pkg-card.popular {
+  border: 2px solid #4A90D9 !important;
+}
+
+.sk-pkg-card.prestige-pkg {
+  border: 2px solid #C9962A !important;
+  background: linear-gradient(160deg, #FDFAF3 0%, #fff 50%) !important;
+}
+
+.sk-pkg-badge {
+  position: absolute !important;
+  top: -14px !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  padding: 5px 16px !important;
+  border-radius: 100px !important;
+  white-space: nowrap !important;
+  letter-spacing: 0.04em !important;
+  text-transform: uppercase !important;
+}
+
+.sk-pkg-badge.blue { background: #4A90D9 !important; color: #fff !important; }
+.sk-pkg-badge.gold { background: #C9962A !important; color: #fff !important; }
+
+.sk-pkg-name {
+  font-size: 22px !important;
+  font-weight: 800 !important;
+  color: #0D1B2A !important;
+  margin: 0 0 6px !important;
+  display: block !important;
+}
+
+.sk-pkg-desc {
+  font-size: 13px !important;
+  color: #6B7280 !important;
+  margin-bottom: 24px !important;
+  padding-bottom: 20px !important;
+  border-bottom: 1px solid #E8EAF0 !important;
+  display: block !important;
+}
+
+.sk-pkg-card .wp-block-list {
+  list-style: none !important;
+  padding: 0 !important;
+  margin: 0 0 28px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
+}
+
+.sk-pkg-card .wp-block-list li {
+  font-size: 14px !important;
+  color: #1F2937 !important;
+  line-height: 1.45 !important;
+  padding-left: 22px !important;
+  position: relative !important;
+}
+
+.sk-pkg-card .wp-block-list li::before {
+  content: '✓' !important;
+  position: absolute !important;
+  left: 0 !important;
+  color: #1A7A4A !important;
+  font-weight: 700 !important;
+}
+
+.sk-pkg-card .wp-block-button__link {
+  border-radius: 8px !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  padding: 12px 20px !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.sk-pkg-btn-outline .wp-block-button__link {
+  background: transparent !important;
+  border: 1.5px solid #E8EAF0 !important;
+  color: #0D1B2A !important;
+}
+
+.sk-pkg-btn-primary .wp-block-button__link {
+  background: #E03B3A !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.sk-pkg-btn-gold .wp-block-button__link {
+  background: #C9962A !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+/* --- GALLERY --- */
+.sk-gallery-section .wp-block-gallery {
+  gap: 4px !important;
+}
+
+.sk-gallery-section .wp-block-gallery .wp-block-image img {
+  border-radius: 0 !important;
+  object-fit: cover !important;
+  height: 220px !important;
+  width: 100% !important;
+}
+
+/* --- BLOG CARDS --- */
+.sk-blog-card {
+  background: #fff !important;
+  border: 1px solid #E8EAF0 !important;
+  border-radius: 12px !important;
+  overflow: hidden !important;
+}
+
+.sk-blog-card .wp-block-image img {
+  width: 100% !important;
+  height: 180px !important;
+  object-fit: cover !important;
+  border-radius: 0 !important;
+}
+
+.sk-blog-body {
+  padding: 20px 22px !important;
+}
+
+.sk-blog-cat {
+  display: inline-block !important;
+  background: #EEF3FA !important;
+  color: #3A6BC0 !important;
+  font-size: 11px !important;
+  font-weight: 700 !important;
+  padding: 4px 10px !important;
+  border-radius: 4px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 10px !important;
+}
+
+.sk-blog-card .wp-block-heading {
+  font-size: 16px !important;
+  font-weight: 700 !important;
+  color: #0D1B2A !important;
+  margin-bottom: 8px !important;
+  line-height: 1.4 !important;
+}
+
+.sk-blog-card p {
+  font-size: 13px !important;
+  color: #6B7280 !important;
+  line-height: 1.6 !important;
+  margin: 0 !important;
+}
+
+/* --- FAQ --- */
+.sk-faq-item {
+  border-bottom: 1px solid #E8EAF0 !important;
+  padding: 22px 0 !important;
+}
+
+.sk-faq-item:first-child { border-top: 1px solid #E8EAF0 !important; }
+
+.sk-faq-item .wp-block-heading {
+  font-size: 17px !important;
+  font-weight: 700 !important;
+  color: #0D1B2A !important;
+  margin-bottom: 10px !important;
+  padding-right: 40px !important;
+  position: relative !important;
+}
+
+.sk-faq-item .wp-block-heading::after {
+  content: '+' !important;
+  position: absolute !important;
+  right: 0 !important;
+  top: 0 !important;
+  font-size: 24px !important;
+  font-weight: 300 !important;
+  color: #E03B3A !important;
+  line-height: 1 !important;
+}
+
+.sk-faq-item p {
+  font-size: 14px !important;
+  color: #6B7280 !important;
+  line-height: 1.7 !important;
+  margin: 0 !important;
+  max-width: 700px !important;
+}
+
+/* --- FINAL CTA --- */
+.sk-final-cta {
+  background: #0D1B2A !important;
+  padding: 112px 64px !important;
+  text-align: center !important;
+}
+
+.sk-urgency-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  background: rgba(224,59,58,0.15) !important;
+  border: 1px solid rgba(224,59,58,0.3) !important;
+  color: #FF9494 !important;
+  padding: 8px 20px !important;
+  border-radius: 100px !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.04em !important;
+  margin-bottom: 28px !important;
+}
+
+.sk-urgency-dot {
+  width: 7px !important;
+  height: 7px !important;
+  background: #E03B3A !important;
+  border-radius: 50% !important;
+  display: inline-block !important;
+  animation: sk-pulse 1.8s infinite !important;
+}
+
+@keyframes sk-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+}
+
+.sk-final-cta .wp-block-heading {
+  font-size: clamp(28px, 4vw, 48px) !important;
+  font-weight: 800 !important;
+  color: #ffffff !important;
+  letter-spacing: -1.5px !important;
+  line-height: 1.1 !important;
+  margin-bottom: 16px !important;
+}
+
+.sk-final-cta p {
+  font-size: 16px !important;
+  color: rgba(255,255,255,0.45) !important;
+  margin-bottom: 44px !important;
+}
+
+.sk-final-cta .wp-block-buttons {
+  justify-content: center !important;
+  gap: 14px !important;
+  flex-wrap: wrap !important;
+}
+
+.sk-final-cta .wp-block-button__link {
+  border-radius: 8px !important;
+  padding: 15px 32px !important;
+  font-size: 15px !important;
+  font-weight: 600 !important;
+}
+
+.sk-final-btn-primary .wp-block-button__link {
+  background: #E03B3A !important;
+  color: #fff !important;
+  border: none !important;
+}
+
+.sk-final-btn-ghost .wp-block-button__link {
+  background: transparent !important;
+  color: rgba(255,255,255,0.8) !important;
+  border: 1px solid rgba(255,255,255,0.25) !important;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+  .sk-section { padding: 56px 24px !important; }
+  .sk-trust-bar { padding: 16px 24px !important; }
+  .sk-hero-stats { gap: 24px; }
+  .sk-hero-stat-num { font-size: 26px; }
+  .sk-stats-row { grid-template-columns: 1fr 1fr !important; }
+  .sk-stat-cell-num { font-size: 36px !important; }
+  .sk-final-cta { padding: 72px 24px !important; }
+  .sk-steps-row { flex-direction: column !important; }
+  .sk-steps-row::after { display: none !important; }
+}

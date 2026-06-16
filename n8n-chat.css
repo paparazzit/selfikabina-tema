@@ -1,0 +1,156 @@
+:root {
+	/* Paleta – već dobro pogođena tvojim fajlom */
+	--chat--color-primary: #e74266; /* magenta */
+	--chat--color-primary-shade-50: #db4061;
+	--chat--color-primary-shade-100: #cf3c5c;
+	--chat--color-secondary: #20b69e; /* tirkiz */
+	--chat--color-secondary-shade-50: #1ca08a;
+
+	--chat--color-white: #ffffff;
+	--chat--color-light: #f5f7fa;
+	--chat--color-light-shade-50: #e9edf5;
+	--chat--color-light-shade-100: #cfd6e3;
+	--chat--color-medium: #d8dbe2;
+	--chat--color-dark: #101330;   /* tamna plavkasta */
+	--chat--color-disabled: #8a8d94;
+	--chat--color-typing: #404040;
+
+	/* Ritam i dimenzije */
+	--chat--spacing: 0.9rem;
+	--chat--border-radius: 16px;               /* zaobljenije */
+	--chat--transition-duration: 0.18s;
+
+	/* Prozor (desktop) */
+	--chat--window--width: 350px;
+	--chat--window--height: 600px;
+
+	/* Header */
+	--chat--header-height: auto;
+	--chat--header--padding: calc(var(--chat--spacing) * 1.1);
+   --chat--header-icon-size: 22px;
+  --chat--header-icon-gap: 8px;
+	/* Blag gradijent u headeru */
+	--chat--header--background: #2c1f8d;
+	--chat--header--color: var(--chat--color-white);
+	--chat--heading--font-size: 1.05rem; /* manji naslov */
+	--chat--subtitle--font-size: 0.98rem;      /* trik da se “sakrije” podnaslov */
+	/* --chat--subtitle--line-height: 0; */
+
+	/* Poruke */
+	--chat--message--font-size: 0.98rem;
+	--chat--message--padding: calc(var(--chat--spacing) * 0.9);
+	--chat--message--border-radius: 18px;
+	--chat--message-line-height: 1.7;
+	--chat--message--bot--background: var(--chat--color-white);
+	--chat--message--bot--color: var(--chat--color-dark);
+	--chat--message--user--background: var(--chat--color-secondary);
+	--chat--message--user--color: var(--chat--color-white);
+	--chat--message--pre--background: rgba(16, 19, 48, 0.06);
+
+	/* Input zona */
+	--chat--textarea--height: 46px;
+
+	/* Toggle (plivajuće dugme) */
+	--chat--toggle--background: var(--chat--color-primary);
+	--chat--toggle--hover--background: var(--chat--color-primary-shade-50);
+	--chat--toggle--active--background: var(--chat--color-primary-shade-100);
+	--chat--toggle--color: var(--chat--color-white);
+	--chat--toggle--size: 64px;
+}
+
+
+/* (Opcionalno) malo “polish”-a izvan varijabli – koristimo prefikse klasa koje koristi widget */
+.n8n-chat-window {
+	font-family: inherit; /* preuzmi font sa sajta */
+	box-shadow: 0 10px 30px rgba(0,0,0,.12);
+	border-radius: 18px;
+	overflow: hidden;
+
+}
+
+
+/* Ubaci custom ikonicu ispred naslova */
+.n8n-chat .chat-header .chat-heading h1::before{
+  content: "";
+  display: inline-block;
+  width: var(--chat--header-icon-size);
+  height: var(--chat--header-icon-size);
+  background: url("https://www.selfikabina.com/wp-content/themes/foto-kabina/assets/header/selfikabina-logo-header.png")  no-repeat center / contain !important;
+
+  margin-right: var(--chat--header-icon-gap);
+  vertical-align: -5px; /* fino poravnanje uz tekst */
+}
+
+/* Ako želiš i sitan “polish” za header */
+.n8n-chat .chat-header .chat-heading h1 {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--chat--header-icon-gap);
+  line-height: 1.2;
+  letter-spacing: .1px;
+}
+.chat-layout .chat-header p{
+display: inline-block;
+/* border: 1px solid red; */
+color: var(--chat--color-light);
+line-height: normal;
+}
+
+.chat-inputs[data-v-de5e7961] {
+  background: #fff !important;
+  box-shadow: 0 -6px 16px rgba(0,0,0,.04);
+}
+
+
+.n8n-chat__messages {
+	background: #fff;
+}
+
+.chat-input-send-button[data-v-de5e7961], .chat-input-file-button[data-v-de5e7961]{
+	color:var(--chat--header--background);
+
+}
+
+/* Lagana senka oko input zone */
+.n8n-chat__input {
+	box-shadow: 0 -6px 16px rgba(0,0,0,.04);
+}
+
+/* Zaobljeniji input i dugmici u input traci */
+.n8n-chat__input textarea,
+.n8n-chat__input button {
+	border-radius: 14px !important;
+}
+
+/* Prijatniji spacing između poruka */
+.n8n-chat__message {
+	margin-bottom: 8px;
+}
+
+/* “Toggle” kružni i sa blagom senkom */
+.n8n-chat-toggle {
+	border-radius: 50%;
+	box-shadow: 0 6px 18px rgba(231, 66, 102, .35);
+}
+
+
+/* RESPONSIVE: na mobilu koristi punu širinu i ~78vh visine */
+@media (max-width: 768px) {
+	:root {
+		--chat--window--width: 100vw;
+		--chat--window--height: 78vh;
+		--chat--toggle--size: 68px;
+		--chat--heading--font-size: 1rem;
+	}
+	.n8n-chat-window {
+		border-radius: 16px 16px 0 0;
+	}
+}
+
+/* (Opcionalno) Ikonica kamere u “toggle” dugmetu – ako želiš emoji rešenje odmah */
+.n8n-chat-toggle::before {
+	content: "📷" !important;
+	font-size: 22px !important;
+	display: inline-block !important;
+	transform: translateY(-1px) ;
+}

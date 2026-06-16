@@ -1,0 +1,40 @@
+header.header_posts {
+	background-color: $pink;
+	text-align: center;
+	position: relative;
+	margin-bottom: 180px;
+	margin-top: 60px;
+	hgroup {
+		padding: 2em 0;
+		h1 {
+			text-transform: uppercase;
+			color: $red;
+			letter-spacing: 3px;
+			font-size: max(5vw - 10px, 19px);
+			br {
+				display: none;
+			}
+		}
+	}
+	img {
+		position: absolute;
+		width: 6%;
+		min-width: 60px;
+		right: 5%;
+		top: 100%;
+		transform: translateY(-50%);
+	}
+	@media (max-width: 1020px) {
+		margin-bottom: 80px;
+	}
+	@media (max-width: 430px) {
+		hgroup {
+			h1 {
+				br {
+					display: inline-block;
+					border: 1px solid red;
+				}
+			}
+		}
+	}
+}

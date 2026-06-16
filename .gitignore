@@ -1,0 +1,17 @@
+# Node modules (ako koristiš npm za SCSS kompajliranje)
+node_modules/
+
+# Compiled/cache fajlovi
+*.css.map
+.sass-cache/
+
+# OS fajlovi
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+*.code-workspace
+
+# WordPress specifično (opciono — zavisi da li želiš da verzioniš compiled CSS)
+# style.css.map

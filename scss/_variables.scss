@@ -1,0 +1,27 @@
+$font: "Inter", sans-serif;
+$fontSize: 16px;
+
+// COLORS
+
+$pink: #fbc9c9;
+$yellow: #fddf57;
+$red: #fe6257;
+$purple: #8d1f6e;
+$neon_pink: #f84791;
+$blue: #2c1f8d;
+$fontColor: rgb(0, 0, 0);
+$green: #75b5b9;
+
+.underline {
+	position: relative;
+	&::after {
+		content: "";
+		display: block;
+		width: 110%;
+		margin-top: 10px;
+		height: 3px;
+		background: $fontColor;
+		position: absolute;
+		left: 0;
+	}
+}

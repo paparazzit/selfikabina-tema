@@ -1,0 +1,158 @@
+*,
+*::after,
+*::before {
+	padding: 0;
+	border: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+ul {
+	list-style: none;
+}
+a {
+	text-decoration: none;
+	color: $fontColor;
+}
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li {
+	color: $fontColor;
+}
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-family: $font;
+	font-size: $fontSize;
+	color: $fontColor;
+
+	opacity: 0;
+	&.noScroll {
+		overflow: hidden;
+	}
+	&.loaded {
+		opacity: 1;
+	}
+}
+
+.nav-container {
+	width: 80%;
+	max-width: 1800px;
+	margin: 0 auto;
+}
+.container {
+	width: 90%;
+	max-width: 1500px;
+	min-width: 300px;
+	margin: 0 auto;
+	@media (max-width: 450px) {
+		width: 100%;
+		min-width: unset;
+	}
+}
+
+.btn {
+	display: inline-block;
+	padding: 0.6em 2.3em;
+	font-weight: 600;
+	letter-spacing: 3px;
+	font-size: 0.9rem;
+	cursor: pointer;
+	transition: 0.2s all ease-in-out;
+	text-transform: uppercase;
+
+	&:hover {
+		opacity: 0.7;
+	}
+	&.btn-blue {
+		color: $blue;
+		border: 3px solid $blue;
+
+		&.shadow {
+			background-color: white;
+			box-shadow: 4px 4px 0 rgba(255, 255, 255, 0.464);
+		}
+	}
+	&.btn-red {
+		color: $red;
+		border: 2px solid $red;
+	}
+	&.btn-pink {
+		color: #ff44cc;
+		border: 2px solid #ff44cc;
+	}
+	&.btn-black {
+		color: black;
+		border: 2px solid black;
+	}
+	&.btn-white {
+		color: white;
+		border: 3px solid white;
+		&.shadow {
+			box-shadow: 3px 3px rgba(255, 255, 255, 0.329);
+		}
+	}
+}
+
+.img-wrapper {
+	overflow: hidden;
+	img {
+		display: block;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		object-position: center;
+	}
+}
+
+.form-info {
+	background-color: rgba(0, 0, 0, 0.636);
+	position: fixed;
+	z-index: 3030;
+	padding: 10px;
+	font-size: 0.9rem;
+	min-width: 0;
+	min-height: 0;
+	max-width: 0;
+	max-height: 0;
+	left: 50%;
+	top: 50%;
+	overflow: hidden;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: 0.2s all ease-in-out;
+
+	&.show {
+		min-width: 100vw;
+		min-height: 100vh;
+		left: 0%;
+		top: 0%;
+		opacity: 1;
+	}
+
+	&.success {
+		p {
+			color: rgb(7, 163, 7);
+		}
+	}
+	&.error {
+		p {
+			color: rgb(203, 10, 10);
+		}
+	}
+	p {
+		background-color: white;
+		padding: 30px;
+		border-radius: 30px;
+
+		font-weight: 600;
+	}
+}

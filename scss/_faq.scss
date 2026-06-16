@@ -1,0 +1,124 @@
+section.faq {
+	margin: 100px 0;
+	.container {
+		hgroup {
+			margin-bottom: 80px;
+
+			max-width: max-content;
+			margin-inline: auto;
+			position: relative;
+			h2 {
+				text-align: center;
+				text-transform: uppercase;
+				position: relative;
+
+				width: max-content;
+				margin: 0 auto;
+				font-size: 2rem;
+			}
+			h4 {
+				text-align: center;
+				font-size: 1rem;
+				text-transform: uppercase;
+				margin-bottom: 20px;
+			}
+			&::after {
+				content: "";
+				display: block;
+				position: absolute;
+				width: 120%;
+				height: 3px;
+				background-color: black;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+		}
+		.faqs {
+			display: flex;
+			align-items: flex-start;
+			justify-content: center;
+			flex-wrap: wrap;
+			.col {
+				flex: 0 0 50%;
+				// margin: 0 auto;
+				display: flex;
+				align-items: flex-start;
+				justify-content: center;
+				flex-wrap: wrap;
+			}
+			article {
+				padding: 25px 15px;
+				flex: 0 0 80%;
+				// border: 2px solid black;
+				width: 45%;
+				background: $red;
+				min-width: 400px;
+
+				margin-bottom: 20px;
+				margin-inline: auto;
+				box-shadow: 4px 4px 0 rgba($purple, 0.35);
+				transition: 0.3s all ease-in-out;
+				will-change: box-shadow;
+				&.active {
+					box-shadow: 7px 10px 0 rgba($purple, 0.28);
+				}
+				h3 {
+					font-size: 1.2rem;
+					text-transform: uppercase;
+					letter-spacing: 1.5px;
+					user-select: none;
+					cursor: pointer;
+				}
+
+				.content {
+					overflow: hidden;
+					max-height: 0;
+					min-height: 0;
+					transition: 0.4s all ease-in-out;
+					padding-inline: 15px;
+					will-change: max-height, min-height;
+
+					p {
+						opacity: 0;
+						position: relative;
+						transform: translateY(20px);
+						transition: 0.3s all ease-in-out;
+						transition-delay: 0.2s;
+						margin-bottom: 10px;
+					}
+				}
+				&.active {
+					.content {
+						padding: 15px;
+						p {
+							opacity: 1;
+							transform: translateY(0) translateX(0px);
+						}
+					}
+				}
+			}
+		}
+	}
+	@media (max-width: 957px) {
+		.container {
+			.faqs {
+				.col {
+					flex: 0 0 100%;
+				}
+			}
+		}
+	}
+	@media (max-width: 450px) {
+		.container {
+			.faqs {
+				.col {
+					article {
+						flex: 0 0 90%;
+
+						min-width: 280px;
+					}
+				}
+			}
+		}
+	}
+}

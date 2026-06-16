@@ -1,0 +1,278 @@
+nav {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	transform: translateY(0);
+	transition: all 0.3s ease-in-out;
+	padding: 15px 0;
+	border-bottom: 2px solid rgb(163, 163, 163);
+	z-index: 2020;
+	background-color: white;
+	&.nav-hidden {
+		transform: translateY(-100%);
+		
+	}
+	.nav-container {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+	.nav-brand {
+		display: block;
+		width: 35px;
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			object-position: center;
+			display: block;
+		}
+	}
+	.drop {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto;
+		// border: 1px solid red;
+	}
+	.links {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		margin: 0 auto;
+		li {
+			margin: 0 20px;
+			text-transform: uppercase;
+			font-size: 0.9rem;
+			font-weight: 500;
+			a {
+				transition: 0.2s all ease-in-out;
+			}
+
+			&:hover {
+				a {
+					color: $red;
+				}
+			}
+		}
+	}
+	.socials_mob {
+		display: none;
+	}
+	.close {
+		display: none;
+	}
+	.socials {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		.icon {
+			margin-right: 20px;
+
+			a {
+				border-radius: 50px;
+				background-color: $fontColor;
+				height: 25px;
+				width: 25px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				transition: 0.3s all ease-in-out;
+				&:hover {
+					background: $red;
+				}
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+			i {
+				font-size: 0.8rem;
+				color: white;
+				line-height: 0;
+			}
+		}
+	}
+	.burger {
+		width: 25px;
+		height: 18px;
+
+		display: none;
+		align-items: center;
+		justify-content: space-between;
+		flex-direction: column;
+		cursor: pointer;
+
+		span {
+			display: block;
+			width: 28px;
+			height: 3px;
+			border-radius: 3px;
+			background-color: black;
+			position: relative;
+			&:nth-of-type(2) {
+				transform: translateX(8px);
+			}
+		}
+	}
+	@media (max-width: 650px) {
+		// position: relative;
+		background-color: white;
+		z-index: 2020;
+
+		.nav-container {
+			position: unset;
+			background-color: white;
+			position: relative;
+		}
+		.nav-brand {
+			margin: 0 auto;
+			position: relative;
+			z-index: 2;
+		}
+		.drop {
+			background-color: white;
+			position: fixed;
+
+			max-height: 100vh;
+			min-height: 100vh;
+			padding: 8%;
+			text-align: center;
+			margin: unset;
+			visibility: hidden;
+			top: 0;
+			// bottom: 0;
+			// top: 0;
+			// left: 0;
+			// bottom: 0;
+			// right: 0;
+			width: 100%;
+			text-align: left;
+			height: 100%;
+
+			overflow: hidden;
+			transition: 0.3s all ease-in-out;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+			opacity: 0;
+			z-index: -1;
+			&.active {
+				z-index: 2020;
+				opacity: 1;
+				visibility: visible;
+				.links {
+					li {
+						margin-left: 0;
+						opacity: 1;
+					}
+				}
+				.socials_mob {
+					margin-left: 0;
+					opacity: 1;
+				}
+			}
+			&.noScroll {
+				overflow: hidden;
+			}
+		}
+
+		.links {
+			display: block;
+			// border: 1px solid red;
+
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			flex-direction: column;
+
+			margin-bottom: 50px;
+			li {
+				font-size: 1.2rem;
+
+				text-align: center;
+				opacity: 0;
+				transition: 0.3s all ease-in-out;
+				transition-delay: calc(0.1s * var(--i));
+				margin-left: 150px;
+				margin-bottom: 30px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+		}
+		.socials_mob {
+			display: flex;
+			align-self: center;
+			opacity: 0;
+			justify-content: center;
+			margin-bottom: 0;
+			margin-left: 150px;
+			transition: 0.5s all ease-in-out;
+			transition-delay: calc(0.1s * var(--i));
+			.icon {
+				margin-right: 20px;
+
+				a {
+					border-radius: 50px;
+					background-color: $fontColor;
+					height: 25px;
+					width: 25px;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					transition: 0.3s all ease-in-out;
+					&:hover {
+						background: $red;
+					}
+				}
+				&:last-child {
+					margin-right: 0;
+				}
+				i {
+					font-size: 0.8rem;
+					color: white;
+				}
+			}
+		}
+		.close {
+			display: block;
+			width: 30px;
+			height: 30px;
+			border: 2px solid black;
+			position: absolute;
+			top: 8%;
+			right: 9%;
+			transition: 0.3s all ease-in-out;
+			cursor: pointer;
+			span {
+				width: 90%;
+				height: 3px;
+				border-radius: 3px;
+				background: black;
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%) rotate(-45deg);
+				&:nth-of-type(2) {
+					transform: translate(-50%, -50%) rotate(45deg);
+				}
+			}
+			&:hover {
+				background-color: black;
+				span {
+					background-color: white;
+				}
+			}
+		}
+		.socials {
+			display: none;
+		}
+		.burger {
+			display: flex;
+		}
+	}
+}

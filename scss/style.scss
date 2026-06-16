@@ -1,0 +1,50 @@
+/* Theme Name: Selfi Kabina 
+Theme URI: https://selfikabina.com
+Author: Srdjan Srdjanov
+Description: Theme for photo booth company
+Version: 1.0.
+
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@import "_variables";
+@import "_animations";
+
+@import "_setup";
+@import "_nav";
+@import "_header";
+@import "_spacerSection";
+@import "_grid";
+@import "_slider";
+@import "_rekviziti";
+@import "_contact";
+@import "_paketi";
+@import "_opt_single";
+@import "_posts_single";
+@import "_clients";
+@import "_faq";
+@import "_reservation";
+@import "_loader";
+@import "_custom_grid";
+@import "_novosti";
+@import "_page";
+
+
+@import "_footer";
+
+
+.in_view{
+    opacity: 0;
+    transition: 1s all ease-in-out;
+    transform: translateY(100px);
+    &.scroll{
+        opacity: 1;
+        transition: 1s all ease-in-out;
+        transform: translateX(0px) translateY(0px);
+    }
+
+}
+.on_over{
+    overflow: hidden;
+}
