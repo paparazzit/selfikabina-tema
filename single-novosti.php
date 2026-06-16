@@ -1,8 +1,68 @@
 <?php get_header(); ?>
 
+<?php
+$novosti_header_image = has_post_thumbnail() ? get_the_post_thumbnail_url(get_the_ID(), 'full') : '';
+?>
+
+<style>
+    header.novosti-single-header {
+        min-height: 25vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(70px, 8vw, 130px) 0;
+        background-color: #fbc9c9;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+    }
+
+    header.novosti-single-header.has-featured-bg::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: rgba(255, 68, 204, 0.62);
+        z-index: 0;
+    }
+
+    header.novosti-single-header hgroup {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        padding: 2em 0;
+    }
+
+    header.novosti-single-header hgroup h1 {
+        color: #fff;
+        text-shadow: 0 3px 18px rgba(0, 0, 0, 0.22);
+    }
+
+    header.novosti-single-header hgroup .novosti-meta span,
+    header.novosti-single-header hgroup .novosti-meta span a {
+        color: #fff;
+        border-bottom-color: rgba(255, 255, 255, 0.45);
+    }
+
+    header.novosti-single-header hgroup .novosti-meta span i {
+        color: #fff;
+    }
+
+    header.novosti-single-header > img {
+        z-index: 2;
+    }
+
+    @media (max-width: 650px) {
+        header.novosti-single-header {
+            min-height: 35vh;
+            padding: 80px 0;
+        }
+    }
+</style>
+
 <main>
 
-    <header class="header_posts header_novosti">
+    <header class="header_posts header_novosti novosti-single-header<?php echo $novosti_header_image ? ' has-featured-bg' : ''; ?>"<?php if ($novosti_header_image) : ?> style="background-image: url('<?php echo esc_url($novosti_header_image); ?>');"<?php endif; ?>>
         <hgroup>
             <h1>
                 <?php the_title(); ?>
@@ -54,16 +114,6 @@
             </div>
         </div>
     </section>
-
-    <?php if (has_post_thumbnail()) : ?>
-    <section class="novosti-hero">
-        <div class="container">
-            <div class="novosti-hero-img img-wrapper">
-                <?php the_post_thumbnail('full'); ?>
-            </div>
-        </div>
-    </section>
-    <?php endif; ?>
 
     <section class="opt_post posts novosti-single">
         <div class="container">
