@@ -1,0 +1,201 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/theme.json",
+  "version": 3,
+  "settings": {
+    "appearanceTools": true,
+    "layout": {
+      "contentSize": "900px",
+      "wideSize": "1500px"
+    },
+    "color": {
+      "palette": [
+        {
+          "slug": "selfi-pink",
+          "color": "#fbc9c9",
+          "name": "Selfi Pink"
+        },
+        {
+          "slug": "selfi-yellow",
+          "color": "#fddf57",
+          "name": "Selfi Yellow"
+        },
+        {
+          "slug": "selfi-red",
+          "color": "#fe6257",
+          "name": "Selfi Red"
+        },
+        {
+          "slug": "selfi-purple",
+          "color": "#8d1f6e",
+          "name": "Selfi Purple"
+        },
+        {
+          "slug": "selfi-neon-pink",
+          "color": "#f84791",
+          "name": "Selfi Neon Pink"
+        },
+        {
+          "slug": "selfi-blue",
+          "color": "#2c1f8d",
+          "name": "Selfi Blue"
+        },
+        {
+          "slug": "selfi-green",
+          "color": "#75b5b9",
+          "name": "Selfi Green"
+        },
+        {
+          "slug": "selfi-black",
+          "color": "#000000",
+          "name": "Selfi Black"
+        },
+        {
+          "slug": "selfi-white",
+          "color": "#ffffff",
+          "name": "Selfi White"
+        }
+      ]
+    },
+    "typography": {
+      "fontFamilies": [
+        {
+          "slug": "inter",
+          "name": "Inter",
+          "fontFamily": "Inter, sans-serif"
+        }
+      ],
+      "fontSizes": [
+        {
+          "slug": "small",
+          "size": "14px",
+          "name": "Small"
+        },
+        {
+          "slug": "regular",
+          "size": "16px",
+          "name": "Regular"
+        },
+        {
+          "slug": "medium",
+          "size": "20px",
+          "name": "Medium"
+        },
+        {
+          "slug": "large",
+          "size": "32px",
+          "name": "Large"
+        },
+        {
+          "slug": "x-large",
+          "size": "48px",
+          "name": "Extra Large"
+        }
+      ]
+    },
+    "spacing": {
+      "units": ["px", "rem", "em", "%", "vw", "vh"],
+      "spacingSizes": [
+        {
+          "slug": "small",
+          "size": "16px",
+          "name": "Small"
+        },
+        {
+          "slug": "medium",
+          "size": "32px",
+          "name": "Medium"
+        },
+        {
+          "slug": "large",
+          "size": "64px",
+          "name": "Large"
+        },
+        {
+          "slug": "x-large",
+          "size": "96px",
+          "name": "Extra Large"
+        }
+      ]
+    },
+    "border": {
+      "color": true,
+      "radius": true,
+      "style": true,
+      "width": true
+    }
+  },
+  "styles": {
+    "color": {
+      "text": "var(--wp--preset--color--selfi-black)",
+      "background": "var(--wp--preset--color--selfi-white)"
+    },
+    "typography": {
+      "fontFamily": "var(--wp--preset--font-family--inter)",
+      "fontSize": "var(--wp--preset--font-size--regular)",
+      "lineHeight": "1.5"
+    },
+    "elements": {
+      "link": {
+        "color": {
+          "text": "var(--wp--preset--color--selfi-black)"
+        },
+        "typography": {
+          "textDecoration": "none"
+        }
+      }
+    },
+    "blocks": {
+      "core/paragraph": {
+        "typography": {
+          "lineHeight": "1.6"
+        }
+      },
+      "core/heading": {
+        "typography": {
+          "fontWeight": "800",
+          "lineHeight": "1.1"
+        }
+      },
+      "core/group": {
+        "spacing": {
+          "blockGap": "var(--wp--preset--spacing--medium)",
+          "padding": {
+            "top": "var(--wp--preset--spacing--large)",
+            "bottom": "var(--wp--preset--spacing--large)"
+          }
+        }
+      },
+      "core/columns": {
+        "spacing": {
+          "blockGap": "var(--wp--preset--spacing--medium)"
+        }
+      },
+      "core/button": {
+        "border": {
+          "color": "var(--wp--preset--color--selfi-blue)",
+          "radius": "0",
+          "style": "solid",
+          "width": "3px"
+        },
+        "color": {
+          "background": "transparent",
+          "text": "var(--wp--preset--color--selfi-blue)"
+        },
+        "spacing": {
+          "padding": {
+            "top": "0.6em",
+            "right": "2.3em",
+            "bottom": "0.6em",
+            "left": "2.3em"
+          }
+        },
+        "typography": {
+          "fontSize": "0.9rem",
+          "fontWeight": "600",
+          "letterSpacing": "3px",
+          "textTransform": "uppercase"
+        }
+      }
+    }
+  }
+}
