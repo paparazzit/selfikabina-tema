@@ -2795,7 +2795,6 @@ header.header_novosti.novosti-single-header {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  overflow: hidden;
 }
 header.header_novosti.novosti-single-header.has-featured-bg::before {
   content: "";
