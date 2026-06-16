@@ -2411,6 +2411,7 @@ section.novosti-single .container article .text-content h2, section.novosti-sing
   align-items: center;
   gap: 8px;
   font-size: 0.8rem;
+  margin-top: 0px !important;
 }
 
 .novosti-related {
@@ -2831,6 +2832,21 @@ header.header_novosti.novosti-single-header > img {
     min-height: 35vh;
     padding: 80px 0;
   }
+}
+
+.novosti-share .share-btn {
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  letter-spacing: 0;
+}
+.novosti-share .share-btn i {
+  font-size: 1rem;
+  line-height: 1;
 }
 
 .page-template-page-korporativni .entry-content,
