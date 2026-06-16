@@ -1,0 +1,61 @@
+// NOVOSTI - SINGLE HEADER HERO
+header.header_novosti {
+    &.novosti-single-header {
+        min-height: 25vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(70px, 8vw, 130px) 0;
+        background-color: $pink;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        overflow: hidden;
+
+        &.has-featured-bg {
+            &::before {
+                content: "";
+                position: absolute;
+                inset: 0;
+                background: rgba($pinkStrong, 0.62);
+                z-index: 0;
+            }
+        }
+
+        hgroup {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            padding: 2em 0;
+
+            h1 {
+                color: white;
+                text-shadow: 0 3px 18px rgba($fontColor, 0.22);
+            }
+
+            .novosti-meta {
+                span {
+                    color: white;
+
+                    i {
+                        color: white;
+                    }
+
+                    a {
+                        color: white;
+                        border-bottom-color: rgba(white, 0.45);
+                    }
+                }
+            }
+        }
+
+        > img {
+            z-index: 2;
+        }
+
+        @media (max-width: 650px) {
+            min-height: 35vh;
+            padding: 80px 0;
+        }
+    }
+}
