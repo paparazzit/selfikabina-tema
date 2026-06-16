@@ -2784,6 +2784,55 @@ section.hp-novosti .hp-novosti-grid {
   color: #fbc9c9;
 }
 
+header.header_novosti.novosti-single-header {
+  min-height: 25vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(70px, 8vw, 130px) 0;
+  background-color: #fbc9c9;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+header.header_novosti.novosti-single-header.has-featured-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(248, 71, 145, 0.62);
+  z-index: 0;
+}
+header.header_novosti.novosti-single-header hgroup {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  padding: 2em 0;
+}
+header.header_novosti.novosti-single-header hgroup h1 {
+  color: white;
+  text-shadow: 0 3px 18px rgba(0, 0, 0, 0.22);
+}
+header.header_novosti.novosti-single-header hgroup .novosti-meta span {
+  color: white;
+}
+header.header_novosti.novosti-single-header hgroup .novosti-meta span i {
+  color: white;
+}
+header.header_novosti.novosti-single-header hgroup .novosti-meta span a {
+  color: white;
+  border-bottom-color: rgba(255, 255, 255, 0.45);
+}
+header.header_novosti.novosti-single-header > img {
+  z-index: 2;
+}
+@media (max-width: 650px) {
+  header.header_novosti.novosti-single-header {
+    min-height: 35vh;
+    padding: 80px 0;
+  }
+}
+
 .page-template-page-korporativni .entry-content,
 body.page-id-ZAMENI_SA_ID .entry-content {
   max-width: 100% !important;
