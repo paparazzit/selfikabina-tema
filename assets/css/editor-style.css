@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+/*
+ * Gutenberg editor styles for Selfi Kabina theme.
+ * This file is intentionally lighter than style.css so the editor is not affected
+ * by frontend-only resets, fixed navigation, loaders, body opacity, or animations.
+ */
+
+.editor-styles-wrapper {
+	--sk-pink: #fbc9c9;
+	--sk-yellow: #fddf57;
+	--sk-red: #fe6257;
+	--sk-purple: #8d1f6e;
+	--sk-neon-pink: #f84791;
+	--sk-blue: #2c1f8d;
+	--sk-green: #75b5b9;
+	--sk-black: #000000;
+	--sk-white: #ffffff;
+
+	font-family: "Inter", sans-serif;
+	font-size: 16px;
+	line-height: 1.5;
+	color: var(--sk-black);
+	background-color: var(--sk-white);
+}
+
+.editor-styles-wrapper *,
+.editor-styles-wrapper *::before,
+.editor-styles-wrapper *::after {
+	box-sizing: border-box;
+}
+
+.editor-styles-wrapper a {
+	color: var(--sk-black);
+	text-decoration: none;
+}
+
+.editor-styles-wrapper p,
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6,
+.editor-styles-wrapper li {
+	color: var(--sk-black);
+}
+
+.editor-styles-wrapper p {
+	line-height: 1.6;
+}
+
+.editor-styles-wrapper h1,
+.editor-styles-wrapper h2,
+.editor-styles-wrapper h3,
+.editor-styles-wrapper h4,
+.editor-styles-wrapper h5,
+.editor-styles-wrapper h6 {
+	font-weight: 800;
+	line-height: 1.1;
+}
+
+.editor-styles-wrapper ul,
+.editor-styles-wrapper ol {
+	padding-left: 1.4em;
+}
+
+.editor-styles-wrapper img {
+	max-width: 100%;
+	height: auto;
+}
+
+/* Gutenberg layout preview */
+.editor-styles-wrapper .wp-block {
+	max-width: 900px;
+}
+
+.editor-styles-wrapper .wp-block[data-align="wide"] {
+	max-width: 1500px;
+}
+
+.editor-styles-wrapper .wp-block[data-align="full"] {
+	max-width: none;
+}
+
+/* Theme helper classes */
+.editor-styles-wrapper .container {
+	width: 90%;
+	max-width: 1500px;
+	min-width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.editor-styles-wrapper .nav-container {
+	width: 80%;
+	max-width: 1800px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.editor-styles-wrapper .underline {
+	position: relative;
+}
+
+.editor-styles-wrapper .underline::after {
+	content: "";
+	display: block;
+	width: 110%;
+	margin-top: 10px;
+	height: 3px;
+	background: var(--sk-black);
+	position: absolute;
+	left: 0;
+}
+
+.editor-styles-wrapper .on_over {
+	overflow: hidden;
+}
+
+.editor-styles-wrapper .img-wrapper {
+	overflow: hidden;
+}
+
+.editor-styles-wrapper .img-wrapper img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	object-position: center;
+}
+
+/* Theme buttons and Gutenberg button preview */
+.editor-styles-wrapper .btn,
+.editor-styles-wrapper .wp-block-button__link {
+	display: inline-block;
+	padding: 0.6em 2.3em;
+	font-weight: 600;
+	letter-spacing: 3px;
+	font-size: 0.9rem;
+	line-height: 1.2;
+	cursor: pointer;
+	transition: 0.2s all ease-in-out;
+	text-transform: uppercase;
+	border-radius: 0;
+	background-color: transparent;
+	box-shadow: none;
+}
+
+.editor-styles-wrapper .btn:hover,
+.editor-styles-wrapper .wp-block-button__link:hover {
+	opacity: 0.7;
+}
+
+.editor-styles-wrapper .btn.btn-blue,
+.editor-styles-wrapper .wp-block-button__link {
+	color: var(--sk-blue);
+	border: 3px solid var(--sk-blue);
+}
+
+.editor-styles-wrapper .btn.btn-red {
+	color: var(--sk-red);
+	border: 2px solid var(--sk-red);
+}
+
+.editor-styles-wrapper .btn.btn-pink {
+	color: #ff44cc;
+	border: 2px solid #ff44cc;
+}
+
+.editor-styles-wrapper .btn.btn-black {
+	color: var(--sk-black);
+	border: 2px solid var(--sk-black);
+}
+
+.editor-styles-wrapper .btn.btn-white {
+	color: var(--sk-white);
+	border: 3px solid var(--sk-white);
+}
+
+.editor-styles-wrapper .btn.btn-blue.shadow {
+	background-color: var(--sk-white);
+	box-shadow: 4px 4px 0 rgba(255, 255, 255, 0.464);
+}
+
+.editor-styles-wrapper .btn.btn-white.shadow {
+	box-shadow: 3px 3px rgba(255, 255, 255, 0.329);
+}
+
+/* Useful block defaults */
+.editor-styles-wrapper .wp-block-group {
+	padding-top: var(--wp--preset--spacing--large, 64px);
+	padding-bottom: var(--wp--preset--spacing--large, 64px);
+}
+
+.editor-styles-wrapper .wp-block-columns {
+	gap: var(--wp--preset--spacing--medium, 32px);
+}
+
+.editor-styles-wrapper .has-selfi-pink-background-color {
+	background-color: var(--sk-pink);
+}
+
+.editor-styles-wrapper .has-selfi-yellow-background-color {
+	background-color: var(--sk-yellow);
+}
+
+.editor-styles-wrapper .has-selfi-red-background-color {
+	background-color: var(--sk-red);
+}
+
+.editor-styles-wrapper .has-selfi-blue-background-color {
+	background-color: var(--sk-blue);
+}
+
+.editor-styles-wrapper .has-selfi-green-background-color {
+	background-color: var(--sk-green);
+}
+
+@media (max-width: 450px) {
+	.editor-styles-wrapper .container {
+		width: 100%;
+		min-width: unset;
+	}
+}
