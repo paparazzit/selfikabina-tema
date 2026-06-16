@@ -17,12 +17,13 @@ if ($novosti_tip_terms && !is_wp_error($novosti_tip_terms)) {
 
     if (
         strpos($novosti_tip_string, 'poslovni') !== false ||
-        strpos($novosti_tip_string, 'corporate') !== false
+        strpos($novosti_tip_string, 'corporate') !== false ||
+        strpos($novosti_tip_string, 'korporativ') !== false
+        
     ) {
         $novosti_tip_class = 'novosti-tip-business';
     } elseif (
-        strpos($novosti_tip_string, 'promo') !== false ||
-        strpos($novosti_tip_string, 'promoc') !== false
+        strpos($novosti_tip_string, 'promo') !== false
     ) {
         $novosti_tip_class = 'novosti-tip-promo';
     } elseif (
