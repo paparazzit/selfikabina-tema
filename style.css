@@ -2227,7 +2227,7 @@ section.custom-grid .grid-wrapper .grid-item:hover {
 }
 
 header.header_posts {
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 header.header_posts h3 {
   color: #fe6257;
@@ -2795,6 +2795,24 @@ header.header_novosti.novosti-single-header {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+header.header_novosti.novosti-single-header.novosti-tip-default, header.header_novosti.novosti-single-header.novosti-tip-private {
+  background-color: #fbc9c9;
+}
+header.header_novosti.novosti-single-header.novosti-tip-default.has-featured-bg::before, header.header_novosti.novosti-single-header.novosti-tip-private.has-featured-bg::before {
+  background: rgba(248, 71, 145, 0.62);
+}
+header.header_novosti.novosti-single-header.novosti-tip-business {
+  background-color: #2c1f8d;
+}
+header.header_novosti.novosti-single-header.novosti-tip-business.has-featured-bg::before {
+  background: rgba(44, 31, 141, 0.68);
+}
+header.header_novosti.novosti-single-header.novosti-tip-promo {
+  background-color: #75b5b9;
+}
+header.header_novosti.novosti-single-header.novosti-tip-promo.has-featured-bg::before {
+  background: rgba(117, 181, 185, 0.6);
 }
 header.header_novosti.novosti-single-header.has-featured-bg::before {
   content: "";
