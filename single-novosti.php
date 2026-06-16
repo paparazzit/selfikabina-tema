@@ -86,14 +86,16 @@ $novosti_header_image = has_post_thumbnail() ? get_the_post_thumbnail_url(get_th
                         <a href="https://www.facebook.com/sharer/sharer.php?u=<?php echo urlencode(get_permalink()); ?>"
                            target="_blank"
                            rel="noopener noreferrer"
-                           class="btn btn-blue share-btn">
-                            <i class="fa-brands fa-facebook-f"></i> Facebook
+                           aria-label="Podeli na Facebook-u"
+                           class="btn btn-blue share-btn share-btn-facebook">
+                            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
                         </a>
                         <a href="https://www.instagram.com/selfi_kabina/"
                            target="_blank"
                            rel="noopener noreferrer"
-                           class="btn btn-pink share-btn">
-                            <i class="fa-brands fa-instagram"></i> Instagram
+                           aria-label="Otvori Instagram profil"
+                           class="btn btn-pink share-btn share-btn-instagram">
+                            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                         </a>
                     </div>
 
