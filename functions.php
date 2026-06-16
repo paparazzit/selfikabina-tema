@@ -14,6 +14,10 @@ function photoBooth_theme_support(){
     add_theme_support('custom-spacing');
     add_theme_support('align-wide');
 
+    // GUTENBERG EDITOR STILOVI
+    add_theme_support('editor-styles');
+    add_editor_style('assets/css/editor-style.css');
+
     // NAVIGACIJA
 
 register_nav_menus( array(
@@ -29,7 +33,6 @@ register_nav_menus( array(
 
 
 }
-
 
 
 
@@ -58,10 +61,9 @@ function order_posts_by_title( $query ) {
 
  } 
 
- 
+  
 
  add_action( 'pre_get_posts', 'order_posts_by_title' );
-
 
 
 
@@ -90,17 +92,19 @@ function get_id_by_slug($page_slug) {
 
 
 
+
+
 // STILOVI
 
 function photoBooth_theme_styles(){
 
    
+
     wp_enqueue_style('main_style', get_template_directory_uri(). '/style.css');
 
 }
 
 add_action( "wp_enqueue_scripts", "photoBooth_theme_styles");
-
 
 function my_n8n_chat_styles() {
   // Make sure the CDN stylesheet is printed first (you already add it in footer).
@@ -192,8 +196,6 @@ use PHPMailer\PHPMailer\SMTP;
 
 
 
-
-
 add_action('phpmailer_init', 'custom_mailer');
 
 
@@ -243,6 +245,7 @@ function custom_mailer ($phpmailer){
 
 
 
+
 /*Hide Author name*/
 
 // function disable_version_authors($endpoints){
@@ -264,9 +267,6 @@ function custom_mailer ($phpmailer){
 //     }
 // }
 // add_action('template_redirect', 'disable_author');
-
-
-
 
 
 
