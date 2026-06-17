@@ -168,11 +168,7 @@ add_action('pre_get_posts', 'novosti_u_kategorije');
 
 function sk_corp_page_styles() {
     if ( is_page( 'korporativni-dogadjaji' ) ) {
-        wp_enqueue_style(
-            'sk-corp-page',
-            get_template_directory_uri() . '/corp-page.css',
-            array(), '1.0'
-        );
+       
         wp_enqueue_script(
             'sk-corp-page',
             get_template_directory_uri() . '/js/corp-page.js',
