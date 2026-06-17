@@ -391,15 +391,28 @@ body.page-id-ZAMENI_SA_ID .entry-content {
   line-height: 1 !important;
 }
 
-.sk-feat-card .wp-block-heading {
+.sk-feat-card .wp-block-heading,
+.sk-feat-card .wp-block-heading h2,
+.sk-feat-card .wp-block-heading h3,
+.sk-feat-card h2.wp-block-heading,
+.sk-feat-card h3.wp-block-heading {
   font-size: 15px !important;
   font-weight: 700 !important;
   color: #ffffff !important;
   margin-bottom: 8px !important;
 }
 
-.sk-feat-card.prestige .wp-block-heading { color: #F5E6C0 !important; }
-.sk-feat-card.keychain .wp-block-heading { color: #7FD9A8 !important; }
+.sk-feat-card.prestige .wp-block-heading,
+.sk-feat-card.prestige .wp-block-heading h2,
+.sk-feat-card.prestige .wp-block-heading h3,
+.sk-feat-card.prestige h2.wp-block-heading,
+.sk-feat-card.prestige h3.wp-block-heading { color: #F5E6C0 !important; }
+
+.sk-feat-card.keychain .wp-block-heading,
+.sk-feat-card.keychain .wp-block-heading h2,
+.sk-feat-card.keychain .wp-block-heading h3,
+.sk-feat-card.keychain h2.wp-block-heading,
+.sk-feat-card.keychain h3.wp-block-heading { color: #7FD9A8 !important; }
 
 .sk-feat-card p {
   font-size: 13px !important;

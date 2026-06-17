@@ -454,7 +454,11 @@ body.page-id-ZAMENI_SA_ID .entry-content {
   border-radius: 12px !important;
   padding: 24px !important;
 
-  .wp-block-heading {
+  .wp-block-heading,
+  .wp-block-heading h2,
+  .wp-block-heading h3,
+  h2.wp-block-heading,
+  h3.wp-block-heading {
     font-size: 15px !important;
     font-weight: 700 !important;
     color: $color-white !important;
@@ -472,14 +476,22 @@ body.page-id-ZAMENI_SA_ID .entry-content {
     border-color: $gold-45 !important;
     background: $gold-08 !important;
 
-    .wp-block-heading { color: $color-gold-light !important; }
+    .wp-block-heading,
+    .wp-block-heading h2,
+    .wp-block-heading h3,
+    h2.wp-block-heading,
+    h3.wp-block-heading { color: $color-gold-light !important; }
   }
 
   &.keychain {
     border-color: $green-45 !important;
     background: $green-08 !important;
 
-    .wp-block-heading { color: #7FD9A8 !important; }
+    .wp-block-heading,
+    .wp-block-heading h2,
+    .wp-block-heading h3,
+    h2.wp-block-heading,
+    h3.wp-block-heading { color: #7FD9A8 !important; }
   }
 }
 
