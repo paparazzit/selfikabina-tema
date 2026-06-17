@@ -2867,7 +2867,7 @@ header.header_novosti.novosti-single-header > img {
 }
 
 .page-template-page-korporativni .entry-content,
-body.post-494 .entry-content {
+body.post-494.post-500 .entry-content {
   max-width: 100% !important;
   padding: 0 !important;
   margin: 0 !important;
@@ -3044,7 +3044,7 @@ body.post-494 .entry-content {
   letter-spacing: -0.8px !important;
   line-height: 1.15 !important;
   margin-bottom: 14px !important;
-  color: #ffffff !important;
+  color: #0D1B2A;
 }
 
 .sk-section-sub {

@@ -89,6 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
   const tooltipName = document.getElementById('sk-tooltip-name');
 
   let hideTimeout = null;
+  console.log('Tooltip initialized:');
 
   // Provera da li href "izgleda" kao slika
   function isImageUrl(url) {
@@ -99,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   function showTooltip(chip) {
+    console.log('showTooltip called for chip:', chip);
     clearTimeout(hideTimeout);
 
     const href      = chip.getAttribute('href');

@@ -166,17 +166,22 @@ add_action('pre_get_posts', 'novosti_u_kategorije');
 // }
 // add_action( 'wp_enqueue_scripts', 'sk_corp_page_styles' );
 
-function sk_corp_page_styles() {
-    if ( is_page( 'korporativni-dogadjaji' ) ) {
-       
+// / Corp page JS — tooltip za brand logoe
+// Učitava se na homepage-u (front-page) i na korporativnoj stranici
+// CSS ide kroz style.scss → style.css (globalno)
+function sk_corp_page_scripts() {
+    if ( is_front_page() || is_page( 'korporativni-dogadjaji' ) || is_page('corporate events') ) {
         wp_enqueue_script(
-            'sk-corp-page',
-            get_template_directory_uri() . '/js/corp-page.js',
-            array(), '1.0', true
-        );
+    'sk-corp-page-js',
+    get_template_directory_uri() . '/js/corp-page.js',
+    array(),
+    filemtime( get_template_directory() . '/js/corp-page.js' ),
+    true
+);
     }
 }
-add_action( 'wp_enqueue_scripts', 'sk_corp_page_styles' );
+add_action( 'wp_enqueue_scripts', 'sk_corp_page_scripts' );
+ 
 
 // CUSTOM MAILER
 
