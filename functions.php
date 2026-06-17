@@ -38,7 +38,6 @@ register_nav_menus( array(
 
 
 
-
 function order_posts_by_title( $query ) { 
 
 
@@ -64,6 +63,7 @@ function order_posts_by_title( $query ) {
   
 
  add_action( 'pre_get_posts', 'order_posts_by_title' );
+
 
 
 
@@ -106,6 +106,29 @@ function photoBooth_theme_styles(){
 
 add_action( "wp_enqueue_scripts", "photoBooth_theme_styles");
 
+function sk_novosti_single_layout_assets() {
+    if ( is_singular('novosti') ) {
+        $layout_css_path = get_template_directory() . '/assets/css/novosti-single-layout.css';
+        $layout_js_path  = get_template_directory() . '/js/novosti-single-layout.js';
+
+        wp_enqueue_style(
+            'sk-novosti-single-layout',
+            get_template_directory_uri() . '/assets/css/novosti-single-layout.css',
+            array('main_style'),
+            file_exists($layout_css_path) ? filemtime($layout_css_path) : '1.0'
+        );
+
+        wp_enqueue_script(
+            'sk-novosti-single-layout',
+            get_template_directory_uri() . '/js/novosti-single-layout.js',
+            array(),
+            file_exists($layout_js_path) ? filemtime($layout_js_path) : '1.0',
+            true
+        );
+    }
+}
+add_action('wp_enqueue_scripts', 'sk_novosti_single_layout_assets', 101);
+
 function my_n8n_chat_styles() {
   // Make sure the CDN stylesheet is printed first (you already add it in footer).
   // Then enqueue our overrides with a later priority or as a separate file.
@@ -137,6 +160,7 @@ function photoBooth_theme_js(){
     wp_enqueue_script('formValidation_js', get_template_directory_uri() . '/js/formValidation.js',
 
     array('axios'), "", true);
+
    
 
     wp_enqueue_script('main_js', get_template_directory_uri() . '/js/main.js', array(), '' ,true );
@@ -225,6 +249,8 @@ function custom_mailer ($phpmailer){
 
 
 
+
+
     $phpmailer ->Host= SMTP_HOST;  
 
     $phpmailer -> Username = SMTP_USERNAME;
@@ -268,7 +294,6 @@ function custom_mailer ($phpmailer){
 //     }
 // }
 // add_action('template_redirect', 'disable_author');
-
 
 
 
