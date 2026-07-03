@@ -4,24 +4,17 @@
 // .entry-content ostaje full-width da background sekcija
 // može da ide preko cele širine ekrana.
 // Ovaj partial kontroliše širinu unutrašnjeg sadržaja
-// unutar .sk-section blokova.
+// unutar većih Gutenberg blokova.
+// Poravnanje naslovnih elemenata i intro paragrafa ostavljamo Gutenbergu.
 // =====================================================
 
 $corp-container: 1240px;
 $corp-container-wide: 1360px;
 $corp-hero-text: 780px;
-$corp-section-intro: 560px;
 
 @mixin corp-container($max-width: $corp-container) {
   width: min(100%, #{$max-width}) !important;
   margin-left: auto !important;
-  margin-right: auto !important;
-}
-
-@mixin corp-left-in-container($width: $corp-section-intro) {
-  width: min(100%, #{$width}) !important;
-  max-width: $width !important;
-  margin-left: max(0px, calc((100% - #{$corp-container}) / 2)) !important;
   margin-right: auto !important;
 }
 
@@ -45,22 +38,6 @@ $corp-section-intro: 560px;
   > .wp-block-gallery,
   > .wp-block-query {
     @include corp-container;
-  }
-
-  // Naslovni elementi sekcije su vezani za isti wrapper kao kartice.
-  > .sk-eyebrow,
-  > .wp-block-heading:first-of-type,
-  > .sk-h2 {
-    @include corp-container;
-  }
-
-  // Intro paragraf ispod H2 ostaje kraći radi čitljivosti,
-  // ali kreće od leve ivice corporate wrappera, ne iz centra.
-  > .sk-section-sub,
-  > p.sk-section-sub,
-  > .wp-block-heading:first-of-type + p {
-    @include corp-left-in-container;
-    text-align: left !important;
   }
 
   &.sk-section-wide {
@@ -108,17 +85,6 @@ $corp-section-intro: 560px;
     > .sk-trust-logos {
       width: 100% !important;
       max-width: none !important;
-    }
-  }
-
-  .sk-section {
-    > .sk-section-sub,
-    > p.sk-section-sub,
-    > .wp-block-heading:first-of-type + p {
-      width: 100% !important;
-      max-width: none !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
     }
   }
 }
