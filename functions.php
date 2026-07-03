@@ -68,7 +68,6 @@ function order_posts_by_title( $query ) {
 
 
 
-
 add_action( 'after_setup_theme', "photoBooth_theme_support" );
 
 
@@ -178,17 +177,11 @@ function novosti_u_kategorije($query) {
 }
 add_action('pre_get_posts', 'novosti_u_kategorije');
 
-// Corp page assets — tooltip JS + layout polish CSS
+// Corp page JS — tooltip za brand logoe
 // Učitava se na homepage-u (front-page) i na korporativnoj stranici.
+// CSS za corporate stranicu je u scss/_page.scss i kompajlira se u style.css.
 function sk_corp_page_scripts() {
     if ( is_front_page() || is_page( 'korporativni-dogadjaji' ) || is_page('corporate events') ) {
-        wp_enqueue_style(
-            'sk-corp-page-fixes',
-            get_template_directory_uri() . '/css/corp-page-fixes.css',
-            array('main_style'),
-            filemtime( get_template_directory() . '/css/corp-page-fixes.css' )
-        );
-
         wp_enqueue_script(
             'sk-corp-page-js',
             get_template_directory_uri() . '/js/corp-page.js',
@@ -288,6 +281,7 @@ function custom_mailer ($phpmailer){
 //     }
 // }
 // add_action('template_redirect', 'disable_author');
+
 
 
 
