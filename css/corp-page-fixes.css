@@ -48,8 +48,14 @@
   margin: 0 !important;
 }
 
-/* Važno: ne dodajemo veliki padding-top karticama.
+/* Važno: ne dodajemo poseban top padding karticama zbog badge-a.
    Badge stoji desno, a sadržaj ostaje prirodno poravnat. */
+.sk-usecase-card.family-day,
+.sk-usecase-card:has(.sk-family-badge),
+.sk-usecase-card:has(.sk-card-badge) {
+  padding-top: 28px !important;
+}
+
 .sk-pkg-card {
   padding-top: 36px !important;
 }
