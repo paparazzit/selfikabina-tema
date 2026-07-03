@@ -9,11 +9,26 @@
 
 $corp-container: 1240px;
 $corp-container-wide: 1360px;
+$corp-hero-text: 780px;
 
 @mixin corp-container($max-width: $corp-container) {
   width: min(100%, #{$max-width}) !important;
   margin-left: auto !important;
   margin-right: auto !important;
+}
+
+.sk-hero-cover {
+  .wp-block-cover__inner-container {
+    @include corp-container;
+  }
+
+  .sk-hero-badge,
+  h1,
+  .sk-hero-sub,
+  .sk-hero-stats,
+  .wp-block-buttons {
+    max-width: $corp-hero-text;
+  }
 }
 
 .sk-section {
@@ -44,8 +59,10 @@ $corp-container-wide: 1360px;
 }
 
 @media (max-width: 768px) {
+  .sk-hero-cover,
   .sk-section,
   .sk-trust-bar {
+    > .wp-block-cover__inner-container,
     > .wp-block-group__inner-container,
     > .wp-block-columns,
     > .wp-block-gallery,
