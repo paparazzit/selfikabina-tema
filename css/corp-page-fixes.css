@@ -18,6 +18,8 @@
 .sk-problem-card .sk-problem-icon,
 .sk-usecase-card .sk-usecase-icon {
   flex: 0 0 auto !important;
+  margin-block-start: 0 !important;
+  margin-top: 0 !important;
   margin-bottom: 16px !important;
 }
 
@@ -25,6 +27,7 @@
 .sk-usecase-card .wp-block-heading {
   width: 100% !important;
   margin-top: 0 !important;
+  margin-block-start: 0 !important;
   margin-bottom: 14px !important;
 }
 
