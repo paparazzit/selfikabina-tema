@@ -1,0 +1,59 @@
+// =====================================================
+// KORPORATIVNI DOGAĐAJI — CONTENT CONTAINER
+// -----------------------------------------------------
+// .entry-content ostaje full-width da background sekcija
+// može da ide preko cele širine ekrana.
+// Ovaj partial kontroliše širinu unutrašnjeg sadržaja
+// unutar .sk-section blokova.
+// =====================================================
+
+$corp-container: 1240px;
+$corp-container-wide: 1360px;
+
+@mixin corp-container($max-width: $corp-container) {
+  width: min(100%, #{$max-width}) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.sk-section {
+  > .wp-block-group__inner-container,
+  > .wp-block-columns,
+  > .wp-block-gallery,
+  > .wp-block-query {
+    @include corp-container;
+  }
+
+  &.sk-section-wide {
+    > .wp-block-group__inner-container,
+    > .wp-block-columns,
+    > .wp-block-gallery,
+    > .wp-block-query {
+      @include corp-container($corp-container-wide);
+    }
+  }
+}
+
+.sk-trust-bar {
+  > .wp-block-group__inner-container,
+  > .wp-block-columns,
+  > .wp-block-group,
+  > .sk-trust-logos {
+    @include corp-container;
+  }
+}
+
+@media (max-width: 768px) {
+  .sk-section,
+  .sk-trust-bar {
+    > .wp-block-group__inner-container,
+    > .wp-block-columns,
+    > .wp-block-gallery,
+    > .wp-block-query,
+    > .wp-block-group,
+    > .sk-trust-logos {
+      width: 100% !important;
+      max-width: none !important;
+    }
+  }
+}
