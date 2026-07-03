@@ -39,13 +39,20 @@ $corp-hero-text: 780px;
     @include corp-container;
   }
 
-  // Intro paragraf ispod H2 naslova sekcije.
-  // Ostaje ograničene širine radi čitljivosti, ali više nije centriran.
-  .sk-section-sub,
-  p.sk-section-sub,
-  .wp-block-heading:first-of-type + p {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+  // Intro elementi sekcije moraju da budu vezani za isti wrapper kao kartice.
+  // Bez ovoga paragraf ispod H2 ode na padding sekcije i vizuelno pobegne levo.
+  > .sk-eyebrow,
+  > .wp-block-heading:first-of-type,
+  > .sk-h2,
+  > .sk-section-sub,
+  > p.sk-section-sub,
+  > .wp-block-heading:first-of-type + p {
+    @include corp-container;
+  }
+
+  > .sk-section-sub,
+  > p.sk-section-sub,
+  > .wp-block-heading:first-of-type + p {
     text-align: left !important;
   }
 
