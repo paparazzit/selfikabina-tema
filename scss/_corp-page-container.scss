@@ -1,26 +1,39 @@
 // =====================================================
-// KORPORATIVNI DOGAĐAJI — CONTENT CONTAINER
+// KORPORATIVNI DOGAĐAJI — CONTAINER / WRAPPER
 // -----------------------------------------------------
-// .entry-content ostaje full-width da background sekcija
-// može da ide preko cele širine ekrana.
-// Ovaj partial kontroliše širinu unutrašnjeg sadržaja
-// unutar većih Gutenberg blokova.
-// Poravnanje naslovnih elemenata i intro paragrafa ostavljamo Gutenbergu.
+// Ostatak teme koristi ovaj princip:
+// section = full width / background / vertikalni spacing
+// .container = unutrašnja širina sadržaja
+//
+// Pošto je corporate stranica rađena kroz Gutenberg, ovde pravimo
+// CSS ekvivalent tog .container principa, bez ručnog gurkanja
+// pojedinačnih elemenata marginama.
 // =====================================================
 
-$corp-container: 1240px;
-$corp-container-wide: 1360px;
+$corp-container-width: 90%;
+$corp-container-max: 1500px;
+$corp-container-min: 300px;
+$corp-container-column: minmax($corp-container-min, min($corp-container-width, $corp-container-max));
 $corp-hero-text: 780px;
 
-@mixin corp-container($max-width: $corp-container) {
-  width: min(100%, #{$max-width}) !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
+@mixin theme-container {
+  width: $corp-container-width;
+  max-width: $corp-container-max;
+  min-width: $corp-container-min;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (max-width: 450px) {
+    width: 100%;
+    min-width: unset;
+  }
 }
 
+// HERO
+// Background ostaje full width, inner-container koristi isti container sistem.
 .sk-hero-cover {
   .wp-block-cover__inner-container {
-    @include corp-container;
+    @include theme-container;
   }
 
   .sk-hero-badge,
@@ -32,59 +45,73 @@ $corp-hero-text: 780px;
   }
 }
 
+// SECTION WRAPPER
+// Umesto horizontalnog paddinga i posebnih margina za svaki element,
+// sekcija dobija 3 kolone: leva prazna / container / desna prazna.
+// Sva direktna deca automatski ulaze u srednju container kolonu.
 .sk-section {
-  > .wp-block-group__inner-container,
-  > .wp-block-columns,
-  > .wp-block-gallery,
-  > .wp-block-query {
-    @include corp-container;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) #{$corp-container-column} minmax(0, 1fr);
+
+  > * {
+    grid-column: 2;
+    min-width: 0;
   }
 
-  &.sk-section-wide {
-    > .wp-block-group__inner-container,
-    > .wp-block-columns,
-    > .wp-block-gallery,
-    > .wp-block-query {
-      @include corp-container($corp-container-wide);
-    }
+  // Ako u Gutenbergu namerno koristiš alignfull blok,
+  // on izlazi iz containera i ide preko cele širine.
+  > .alignfull {
+    grid-column: 1 / -1;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  // Ako alignfull grupa ima inner container, vraćamo sadržaj unutra.
+  > .alignfull > .wp-block-group__inner-container {
+    @include theme-container;
   }
 }
 
-// Trust bar može da bude složen kao Gutenberg group sa inner-containerom,
-// ali može i da ima p / logo row direktno kao decu.
-// Zato poravnavamo i wrapper i direktnu decu, da ne beži levo/desno.
+// Šira corporate sekcija — koristi se samo kada ručno dodaš klasu sk-section-wide.
+.sk-section.sk-section-wide {
+  grid-template-columns: minmax(0, 1fr) minmax($corp-container-min, min($corp-container-width, 1800px)) minmax(0, 1fr);
+}
+
+// TRUST BAR
+// Isto kao gore: background full width, sadržaj u srednjoj container koloni.
 .sk-trust-bar {
-  > .wp-block-group__inner-container,
-  > .wp-block-columns,
-  > .wp-block-group,
-  > p,
-  > .sk-trust-logos {
-    @include corp-container;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+
+  display: grid !important;
+  grid-template-columns: minmax(0, 1fr) #{$corp-container-column} minmax(0, 1fr);
+
+  > * {
+    grid-column: 2;
+    min-width: 0;
   }
 
-  > .wp-block-group__inner-container {
-    > p,
-    > .sk-trust-logos {
-      width: 100% !important;
-      max-width: none !important;
-    }
+  > .alignfull {
+    grid-column: 1 / -1;
+    width: 100% !important;
+    max-width: none !important;
+  }
+
+  > .alignfull > .wp-block-group__inner-container {
+    @include theme-container;
   }
 }
 
-@media (max-width: 768px) {
-  .sk-hero-cover,
+@media (max-width: 450px) {
   .sk-section,
   .sk-trust-bar {
-    > .wp-block-cover__inner-container,
-    > .wp-block-group__inner-container,
-    > .wp-block-columns,
-    > .wp-block-gallery,
-    > .wp-block-query,
-    > .wp-block-group,
-    > p,
-    > .sk-trust-logos {
-      width: 100% !important;
-      max-width: none !important;
+    grid-template-columns: minmax(0, 1fr);
+
+    > * {
+      grid-column: 1;
     }
   }
 }
