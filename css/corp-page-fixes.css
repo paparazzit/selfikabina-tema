@@ -60,7 +60,7 @@
 }
 
 .sk-pkg-card {
-  padding-top: 52px !important;
+  /* padding-top: 52px !important; */
 }
 
 .sk-problem-card .sk-card-badge,
@@ -76,7 +76,7 @@
 .sk-problem-card:has(.sk-card-badge),
 .sk-usecase-card:has(.sk-card-badge),
 .sk-usecase-card:has(.sk-family-badge) {
-  padding-top: 56px !important;
+  /* padding-top: 56px !important; */
 }
 
 @media (min-width: 769px) {
