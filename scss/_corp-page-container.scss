@@ -1,39 +1,22 @@
 // =====================================================
 // KORPORATIVNI DOGAĐAJI — CONTAINER / WRAPPER
 // -----------------------------------------------------
-// Ostatak teme koristi ovaj princip:
+// Koristimo isti princip kao na ostatku sajta:
 // section = full width / background / vertikalni spacing
 // .container = unutrašnja širina sadržaja
 //
-// Pošto je corporate stranica rađena kroz Gutenberg, ovde pravimo
-// CSS ekvivalent tog .container principa, bez ručnog gurkanja
-// pojedinačnih elemenata marginama.
+// Važno: u Gutenbergu unutar svake .sk-section sekcije treba da postoji
+// unutrašnji Group block sa klasom .container.
 // =====================================================
 
-$corp-container-width: 90%;
-$corp-container-max: 1500px;
-$corp-container-min: 300px;
 $corp-container-wide-max: 1800px;
 $corp-hero-text: 780px;
 
-@mixin theme-container($max-width: $corp-container-max) {
-  width: $corp-container-width;
-  max-width: $max-width;
-  min-width: $corp-container-min;
-  margin-left: auto;
-  margin-right: auto;
-
-  @media (max-width: 450px) {
-    width: 100%;
-    min-width: unset;
-  }
-}
-
 // HERO
-// Background ostaje full width, inner-container koristi isti container sistem.
+// Background ostaje full width, inner-container koristi postojeći .container princip.
 .sk-hero-cover {
   .wp-block-cover__inner-container {
-    @include theme-container;
+    @extend .container;
   }
 
   .sk-hero-badge,
@@ -46,63 +29,56 @@ $corp-hero-text: 780px;
 }
 
 // SECTION WRAPPER
-// Section ostaje full width / background / vertikalni spacing.
-// Direktna Gutenberg deca glume unutrašnji .container:
-// width: 90%; max-width: 1500px; margin-inline: auto.
+// Ne diramo više svako direktno dete sekcije.
+// Sadržaj se poravnava kroz pravi .container wrapper u Gutenbergu.
 .sk-section {
   padding-left: 0 !important;
   padding-right: 0 !important;
 
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-
-  > * {
-    @include theme-container;
+  > .container,
+  > .wp-block-group.container,
+  > .wp-block-group__inner-container.container {
+    width: 90% !important;
+    max-width: 1500px !important;
+    min-width: 300px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
 
-  // Ako u Gutenbergu namerno koristiš alignfull blok,
-  // on izlazi iz containera i ide preko cele širine.
-  > .alignfull {
-    width: 100% !important;
-    max-width: none !important;
-    min-width: 0 !important;
-  }
-
-  // Ako alignfull grupa ima inner container, vraćamo sadržaj unutra.
-  > .alignfull > .wp-block-group__inner-container {
-    @include theme-container;
-  }
-}
-
-// Šira corporate sekcija — koristi se samo kada ručno dodaš klasu sk-section-wide.
-.sk-section.sk-section-wide {
-  > *:not(.alignfull) {
-    @include theme-container($corp-container-wide-max);
+  &.sk-section-wide {
+    > .container,
+    > .wp-block-group.container,
+    > .wp-block-group__inner-container.container {
+      max-width: $corp-container-wide-max !important;
+    }
   }
 }
 
 // TRUST BAR
-// Isto kao gore: background full width, sadržaj koristi container princip.
+// Isto: pozadina full width, sadržaj unutar .container.
 .sk-trust-bar {
   padding-left: 0 !important;
   padding-right: 0 !important;
 
-  display: flex !important;
-  flex-direction: column !important;
-  align-items: center !important;
-
-  > * {
-    @include theme-container;
+  > .container,
+  > .wp-block-group.container,
+  > .wp-block-group__inner-container.container {
+    width: 90% !important;
+    max-width: 1500px !important;
+    min-width: 300px !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
   }
+}
 
-  > .alignfull {
-    width: 100% !important;
-    max-width: none !important;
-    min-width: 0 !important;
-  }
-
-  > .alignfull > .wp-block-group__inner-container {
-    @include theme-container;
+@media (max-width: 450px) {
+  .sk-section,
+  .sk-trust-bar {
+    > .container,
+    > .wp-block-group.container,
+    > .wp-block-group__inner-container.container {
+      width: 100% !important;
+      min-width: unset !important;
+    }
   }
 }
