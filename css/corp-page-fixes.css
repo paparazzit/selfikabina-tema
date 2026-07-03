@@ -44,9 +44,7 @@
   margin: 0 !important;
 }
 
-.sk-pkg-card {
-  padding-top: 52px !important;
-}
+
 
 .sk-problem-card .sk-card-badge,
 .sk-usecase-card .sk-card-badge,
@@ -58,11 +56,11 @@
   margin: 0 !important;
 }
 
-.sk-problem-card:has(.sk-card-badge),
+/* .sk-problem-card:has(.sk-card-badge),
 .sk-usecase-card:has(.sk-card-badge),
 .sk-usecase-card:has(.sk-family-badge) {
   padding-top: 56px !important;
-}
+} */
 
 @media (min-width: 769px) {
   .sk-section .wp-block-column:has(> .sk-problem-card),
