@@ -1,0 +1,117 @@
+// =====================================================
+// KORPORATIVNI DOGAĐAJI — CARD LAYOUT FIXES
+// -----------------------------------------------------
+// Ovde držimo samo ispravke za corporate kartice.
+// Ovo zamenjuje privremeni css/corp-page-fixes.css fajl.
+// =====================================================
+
+.sk-problem-card,
+.sk-usecase-card,
+.sk-pkg-card {
+  position: relative !important;
+}
+
+.sk-problem-card,
+.sk-usecase-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  gap: 0 !important;
+}
+
+// Gutenberg dodaje margin-block-start na direktnu decu flow blokova.
+// To je pravilo koje je pravilo veliki prazan prostor iznad ikonice u Family Day kartici.
+.sk-problem-card.is-layout-flow > *,
+.sk-usecase-card.is-layout-flow > * {
+  margin-block-start: 0 !important;
+}
+
+.sk-problem-card .sk-problem-icon,
+.sk-usecase-card .sk-usecase-icon {
+  flex: 0 0 auto !important;
+  margin-top: 0 !important;
+  margin-block-start: 0 !important;
+  margin-bottom: 16px !important;
+}
+
+.sk-problem-card .wp-block-heading,
+.sk-usecase-card .wp-block-heading {
+  width: 100% !important;
+  margin-top: 0 !important;
+  margin-block-start: 0 !important;
+  margin-bottom: 14px !important;
+}
+
+.sk-problem-card p,
+.sk-usecase-card p {
+  margin-top: 0 !important;
+  margin-block-start: 0 !important;
+}
+
+// Badge ne sme da gura ostali sadržaj kartice.
+// Stoji u gornjem desnom uglu, a icon/title/tekst ostaju normalno poravnati.
+.sk-problem-card .sk-card-badge,
+.sk-usecase-card .sk-card-badge,
+.sk-usecase-card .sk-family-badge {
+  position: absolute !important;
+  top: 24px !important;
+  right: 24px !important;
+  left: auto !important;
+  transform: none !important;
+  z-index: 2 !important;
+  margin: 0 !important;
+}
+
+@media (min-width: 769px) {
+  .sk-section .wp-block-columns:has(.sk-problem-card),
+  .sk-section .wp-block-columns:has(.sk-usecase-card),
+  .sk-section .wp-block-columns:has(.sk-pkg-card) {
+    align-items: stretch !important;
+  }
+
+  // Kada je sama Gutenberg kolona kartica: <div class="wp-block-column sk-usecase-card">
+  .sk-section .wp-block-column.sk-problem-card,
+  .sk-section .wp-block-column.sk-usecase-card,
+  .sk-section .wp-block-column.sk-pkg-card {
+    align-self: stretch !important;
+    height: auto !important;
+  }
+
+  // Kada je kartica unutar Gutenberg kolone: <div class="wp-block-column"><div class="sk-usecase-card">
+  .sk-section .wp-block-column:has(> .sk-problem-card),
+  .sk-section .wp-block-column:has(> .sk-usecase-card),
+  .sk-section .wp-block-column:has(> .sk-pkg-card) {
+    display: flex !important;
+    align-self: stretch !important;
+  }
+
+  .sk-section .wp-block-column > .sk-problem-card,
+  .sk-section .wp-block-column > .sk-usecase-card,
+  .sk-section .wp-block-column > .sk-pkg-card {
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  .sk-problem-card .wp-block-heading {
+    min-height: 3.35em !important;
+  }
+
+  .sk-usecase-card .wp-block-heading {
+    min-height: 2.4em !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .sk-problem-card .wp-block-heading,
+  .sk-usecase-card .wp-block-heading {
+    min-height: 0 !important;
+  }
+
+  .sk-problem-card .sk-card-badge,
+  .sk-usecase-card .sk-card-badge,
+  .sk-usecase-card .sk-family-badge {
+    top: 18px !important;
+    right: 18px !important;
+  }
+}
