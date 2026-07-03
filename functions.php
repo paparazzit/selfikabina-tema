@@ -69,7 +69,6 @@ function order_posts_by_title( $query ) {
 
 
 
-
 add_action( 'after_setup_theme', "photoBooth_theme_support" );
 
 
@@ -179,29 +178,24 @@ function novosti_u_kategorije($query) {
 }
 add_action('pre_get_posts', 'novosti_u_kategorije');
 
-// function sk_corp_page_styles() {
-//     if ( is_page( 'korporativni-dogadjaji' ) ) {
-//         wp_enqueue_style(
-//             'sk-corp-page',
-//             get_template_directory_uri() . '/corp-page.css',
-//             array(), '1.0'
-//         );
-//     }
-// }
-// add_action( 'wp_enqueue_scripts', 'sk_corp_page_styles' );
-
-// / Corp page JS — tooltip za brand logoe
-// Učitava se na homepage-u (front-page) i na korporativnoj stranici
-// CSS ide kroz style.scss → style.css (globalno)
+// Corp page assets — tooltip JS + layout polish CSS
+// Učitava se na homepage-u (front-page) i na korporativnoj stranici.
 function sk_corp_page_scripts() {
     if ( is_front_page() || is_page( 'korporativni-dogadjaji' ) || is_page('corporate events') ) {
+        wp_enqueue_style(
+            'sk-corp-page-fixes',
+            get_template_directory_uri() . '/css/corp-page-fixes.css',
+            array('main_style'),
+            filemtime( get_template_directory() . '/css/corp-page-fixes.css' )
+        );
+
         wp_enqueue_script(
-    'sk-corp-page-js',
-    get_template_directory_uri() . '/js/corp-page.js',
-    array(),
-    filemtime( get_template_directory() . '/js/corp-page.js' ),
-    true
-);
+            'sk-corp-page-js',
+            get_template_directory_uri() . '/js/corp-page.js',
+            array(),
+            filemtime( get_template_directory() . '/js/corp-page.js' ),
+            true
+        );
     }
 }
 add_action( 'wp_enqueue_scripts', 'sk_corp_page_scripts' );
