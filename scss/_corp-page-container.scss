@@ -49,12 +49,24 @@ $corp-hero-text: 780px;
   }
 }
 
+// Trust bar može da bude složen kao Gutenberg group sa inner-containerom,
+// ali može i da ima p / logo row direktno kao decu.
+// Zato poravnavamo i wrapper i direktnu decu, da ne beži levo/desno.
 .sk-trust-bar {
   > .wp-block-group__inner-container,
   > .wp-block-columns,
   > .wp-block-group,
+  > p,
   > .sk-trust-logos {
     @include corp-container;
+  }
+
+  > .wp-block-group__inner-container {
+    > p,
+    > .sk-trust-logos {
+      width: 100% !important;
+      max-width: none !important;
+    }
   }
 }
 
@@ -68,6 +80,7 @@ $corp-hero-text: 780px;
     > .wp-block-gallery,
     > .wp-block-query,
     > .wp-block-group,
+    > p,
     > .sk-trust-logos {
       width: 100% !important;
       max-width: none !important;
