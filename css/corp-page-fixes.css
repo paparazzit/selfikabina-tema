@@ -61,16 +61,25 @@
 }
 
 @media (min-width: 769px) {
+  .sk-section .wp-block-columns:has(.sk-problem-card),
+  .sk-section .wp-block-columns:has(.sk-usecase-card),
+  .sk-section .wp-block-columns:has(.sk-pkg-card) {
+    align-items: stretch !important;
+  }
+
   .sk-section .wp-block-column:has(> .sk-problem-card),
   .sk-section .wp-block-column:has(> .sk-usecase-card),
   .sk-section .wp-block-column:has(> .sk-pkg-card) {
     display: flex !important;
+    align-self: stretch !important;
   }
 
   .sk-section .wp-block-column > .sk-problem-card,
   .sk-section .wp-block-column > .sk-usecase-card,
   .sk-section .wp-block-column > .sk-pkg-card {
     flex: 1 1 auto !important;
+    width: 100% !important;
+    height: auto !important;
   }
 
   .sk-problem-card .wp-block-heading {
