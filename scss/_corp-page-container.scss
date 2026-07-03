@@ -13,12 +13,12 @@
 $corp-container-width: 90%;
 $corp-container-max: 1500px;
 $corp-container-min: 300px;
-$corp-container-column: minmax($corp-container-min, min($corp-container-width, $corp-container-max));
+$corp-container-wide-max: 1800px;
 $corp-hero-text: 780px;
 
-@mixin theme-container {
+@mixin theme-container($max-width: $corp-container-max) {
   width: $corp-container-width;
-  max-width: $corp-container-max;
+  max-width: $max-width;
   min-width: $corp-container-min;
   margin-left: auto;
   margin-right: auto;
@@ -46,27 +46,27 @@ $corp-hero-text: 780px;
 }
 
 // SECTION WRAPPER
-// Umesto horizontalnog paddinga i posebnih margina za svaki element,
-// sekcija dobija 3 kolone: leva prazna / container / desna prazna.
-// Sva direktna deca automatski ulaze u srednju container kolonu.
+// Section ostaje full width / background / vertikalni spacing.
+// Direktna Gutenberg deca glume unutrašnji .container:
+// width: 90%; max-width: 1500px; margin-inline: auto.
 .sk-section {
   padding-left: 0 !important;
   padding-right: 0 !important;
 
-  display: grid !important;
-  grid-template-columns: minmax(0, 1fr) #{$corp-container-column} minmax(0, 1fr);
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
 
   > * {
-    grid-column: 2;
-    min-width: 0;
+    @include theme-container;
   }
 
   // Ako u Gutenbergu namerno koristiš alignfull blok,
   // on izlazi iz containera i ide preko cele širine.
   > .alignfull {
-    grid-column: 1 / -1;
     width: 100% !important;
     max-width: none !important;
+    min-width: 0 !important;
   }
 
   // Ako alignfull grupa ima inner container, vraćamo sadržaj unutra.
@@ -77,41 +77,32 @@ $corp-hero-text: 780px;
 
 // Šira corporate sekcija — koristi se samo kada ručno dodaš klasu sk-section-wide.
 .sk-section.sk-section-wide {
-  grid-template-columns: minmax(0, 1fr) minmax($corp-container-min, min($corp-container-width, 1800px)) minmax(0, 1fr);
+  > *:not(.alignfull) {
+    @include theme-container($corp-container-wide-max);
+  }
 }
 
 // TRUST BAR
-// Isto kao gore: background full width, sadržaj u srednjoj container koloni.
+// Isto kao gore: background full width, sadržaj koristi container princip.
 .sk-trust-bar {
   padding-left: 0 !important;
   padding-right: 0 !important;
 
-  display: grid !important;
-  grid-template-columns: minmax(0, 1fr) #{$corp-container-column} minmax(0, 1fr);
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
 
   > * {
-    grid-column: 2;
-    min-width: 0;
+    @include theme-container;
   }
 
   > .alignfull {
-    grid-column: 1 / -1;
     width: 100% !important;
     max-width: none !important;
+    min-width: 0 !important;
   }
 
   > .alignfull > .wp-block-group__inner-container {
     @include theme-container;
-  }
-}
-
-@media (max-width: 450px) {
-  .sk-section,
-  .sk-trust-bar {
-    grid-template-columns: minmax(0, 1fr);
-
-    > * {
-      grid-column: 1;
-    }
   }
 }
