@@ -2870,7 +2870,7 @@ header.header_novosti.novosti-single-header > img {
 body.post-494.post-500 .entry-content {
   max-width: 100% !important;
   padding: 0 !important;
-  margin: 0 !important;
+  margin: 60px 0 0 0 !important;
 }
 
 .sk-hero-cover {
@@ -3039,7 +3039,7 @@ body.post-494.post-500 .entry-content {
 
 .sk-section .wp-block-heading:first-of-type,
 .sk-h2 {
-  font-size: clamp(22px, 3.1vw, 30px) !important;
+  font-size: clamp(22px, 3.2vw, 30px) !important;
   font-weight: 800 !important;
   letter-spacing: -0.8px !important;
   line-height: 1.15 !important;
@@ -3674,6 +3674,71 @@ body.post-494.post-500 .entry-content {
   }
   .sk-steps-row::after {
     display: none !important;
+  }
+}
+.sk-hero-cover .wp-block-cover__inner-container {
+  width: min(100%, 1240px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.sk-hero-cover .sk-hero-badge,
+.sk-hero-cover h1,
+.sk-hero-cover .sk-hero-sub,
+.sk-hero-cover .sk-hero-stats,
+.sk-hero-cover .wp-block-buttons {
+  max-width: 780px;
+}
+
+.sk-section > .wp-block-group__inner-container,
+.sk-section > .wp-block-columns,
+.sk-section > .wp-block-gallery,
+.sk-section > .wp-block-query {
+  width: min(100%, 1240px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+.sk-section.sk-section-wide > .wp-block-group__inner-container,
+.sk-section.sk-section-wide > .wp-block-columns,
+.sk-section.sk-section-wide > .wp-block-gallery,
+.sk-section.sk-section-wide > .wp-block-query {
+  width: min(100%, 1360px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+.sk-trust-bar > .wp-block-group__inner-container,
+.sk-trust-bar > .wp-block-columns,
+.sk-trust-bar > .wp-block-group,
+.sk-trust-bar > .sk-trust-logos {
+  width: min(100%, 1240px) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+@media (max-width: 768px) {
+  .sk-hero-cover > .wp-block-cover__inner-container,
+  .sk-hero-cover > .wp-block-group__inner-container,
+  .sk-hero-cover > .wp-block-columns,
+  .sk-hero-cover > .wp-block-gallery,
+  .sk-hero-cover > .wp-block-query,
+  .sk-hero-cover > .wp-block-group,
+  .sk-hero-cover > .sk-trust-logos,
+  .sk-section > .wp-block-cover__inner-container,
+  .sk-section > .wp-block-group__inner-container,
+  .sk-section > .wp-block-columns,
+  .sk-section > .wp-block-gallery,
+  .sk-section > .wp-block-query,
+  .sk-section > .wp-block-group,
+  .sk-section > .sk-trust-logos,
+  .sk-trust-bar > .wp-block-cover__inner-container,
+  .sk-trust-bar > .wp-block-group__inner-container,
+  .sk-trust-bar > .wp-block-columns,
+  .sk-trust-bar > .wp-block-gallery,
+  .sk-trust-bar > .wp-block-query,
+  .sk-trust-bar > .wp-block-group,
+  .sk-trust-bar > .sk-trust-logos {
+    width: 100% !important;
+    max-width: none !important;
   }
 }
 footer {
