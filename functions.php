@@ -106,7 +106,7 @@ add_action('pre_get_posts', 'novosti_u_kategorije');
 // Corp page assets — tooltip za brand logoe + Gutenberg container sistem.
 // Učitava se na homepage-u (front-page) i na korporativnoj stranici.
 function sk_corp_page_scripts() {
-    if ( is_front_page() || is_page( 'korporativni-dogadjaji' ) || is_page('corporate events') ) {
+    if ( is_front_page() || is_page( 'korporativni-dogadjaji' ) || is_page('corporate events') || is_page('corporate-events') ) {
         $corp_container_css_path = get_template_directory() . '/assets/css/corporate-containers.css';
         $corp_page_js_path       = get_template_directory() . '/js/corp-page.js';
 
