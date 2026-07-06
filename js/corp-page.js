@@ -44,12 +44,19 @@ document.addEventListener('DOMContentLoaded', function () {
     return /\.(png|jpe?g|svg|webp|gif)(\?.*)?$/i.test(trimmed);
   }
 
+  function getBrandLogoUrl(chip) {
+    return chip.getAttribute('data-logo') ||
+      chip.getAttribute('data-img') ||
+      chip.getAttribute('href') ||
+      '';
+  }
+
   function setTooltipContent(chip) {
-    const href = chip.getAttribute('href');
+    const logoUrl = getBrandLogoUrl(chip);
     const brandName = chip.textContent.trim();
 
-    if (isImageUrl(href)) {
-      tooltipImg.src = href;
+    if (isImageUrl(logoUrl)) {
+      tooltipImg.src = logoUrl;
       tooltipImg.alt = brandName ? brandName + ' logo' : 'Brand logo';
       tooltipImg.classList.remove('hidden');
       tooltipName.classList.add('hidden');
@@ -136,10 +143,6 @@ document.addEventListener('DOMContentLoaded', function () {
       e.stopPropagation();
       toggleTooltip(chip);
     });
-  });
-
-  tooltip.addEventListener('click', function (e) {
-    e.stopPropagation();
   });
 
   document.addEventListener('click', function () {
