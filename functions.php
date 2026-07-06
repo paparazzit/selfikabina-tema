@@ -103,38 +103,10 @@ function novosti_u_kategorije($query) {
 }
 add_action('pre_get_posts', 'novosti_u_kategorije');
 
-function sk_is_corporate_page() {
-    if ( is_front_page() || is_page( array( 'korporativni-dogadjaji', 'corporate-events', 'corporate events' ) ) ) {
-        return true;
-    }
-
-    if ( is_page() ) {
-        $post = get_post();
-
-        if ( $post && ! empty( $post->post_content ) ) {
-            $content_markers = array(
-                'sk-hero-cover',
-                'sk-trust-logo',
-                'sk-client-chip',
-                'sk-container--lg',
-                'sk-final-cta',
-            );
-
-            foreach ( $content_markers as $marker ) {
-                if ( strpos( $post->post_content, $marker ) !== false ) {
-                    return true;
-                }
-            }
-        }
-    }
-
-    return false;
-}
-
 // Corp page assets — tooltip za brand logoe + Gutenberg container sistem.
-// Učitava se na homepage-u i na svakoj stranici koja koristi corporate Gutenberg blokove.
+// Učitava se na homepage-u (front-page) i na korporativnoj stranici.
 function sk_corp_page_scripts() {
-    if ( sk_is_corporate_page() ) {
+    if ( is_front_page() || is_page( 'korporativni-dogadjaji' ) || is_page('corporate events') ) {
         $corp_container_css_path = get_template_directory() . '/assets/css/corporate-containers.css';
         $corp_page_js_path       = get_template_directory() . '/js/corp-page.js';
 
