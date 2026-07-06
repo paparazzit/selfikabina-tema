@@ -53,15 +53,38 @@
   margin-block-start: 0 !important;
 }
 
-// Package kartice: CTA dugme ide uvek na dno kartice.
+// -----------------------------------------------------
+// PACKAGE KARTICE
+// -----------------------------------------------------
+// Cilj: sve CTA dugmiće poravnati na donju ivicu kartice,
+// bez obzira na to koliko stavki ima lista u pojedinačnom paketu.
 .sk-pkg-card {
-  .wp-block-buttons,
-  > .wp-block-button {
+  align-items: stretch !important;
+  height: 100% !important;
+
+  // Direktna deca ostaju normalno u vertikalnom toku.
+  > * {
+    flex: 0 0 auto;
+  }
+
+  // Lista je poslednji promenljivi deo sadržaja pre dugmeta.
+  // Ona dobija fleksibilni prostor i time gura CTA blok na dno.
+  > ul,
+  > .wp-block-list,
+  .wp-block-list {
+    flex: 1 1 auto !important;
+    margin-bottom: 28px !important;
+  }
+
+  // Gutenberg Buttons blok je CTA zona i uvek ide na dno kartice.
+  > .wp-block-buttons,
+  .wp-block-buttons {
     margin-top: auto !important;
     width: 100% !important;
   }
 
-  .wp-block-button {
+  .wp-block-button,
+  .wp-block-button__link {
     width: 100% !important;
   }
 }
