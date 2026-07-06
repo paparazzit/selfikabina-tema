@@ -150,6 +150,64 @@
   max-width: 780px;
 }
 
+/* Brand logo tooltip */
+#sk-brand-tooltip {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 132px;
+  min-height: 72px;
+  max-width: min(280px, calc(100vw - 24px));
+  padding: 16px 18px;
+  background: #ffffff;
+  border: 1px solid rgba(13, 27, 42, 0.12);
+  border-radius: 14px;
+  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px) scale(0.98);
+  transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+  pointer-events: none;
+}
+
+#sk-brand-tooltip.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+#sk-brand-tooltip img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: 200px;
+  max-height: 96px;
+  object-fit: contain;
+}
+
+#sk-brand-tooltip .hidden {
+  display: none !important;
+}
+
+#sk-tooltip-name {
+  display: block;
+  color: #0d1b2a;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.sk-trust-logo,
+.sk-client-chip {
+  cursor: pointer;
+}
+
 /* Legacy helper: no width control here */
 .sk-subsection {
   width: 100% !important;
