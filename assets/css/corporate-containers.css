@@ -1,8 +1,10 @@
 /* =====================================================
    Korporativni događaji — Gutenberg container system
    -----------------------------------------------------
-   Outer Group:  sk-section / sk-section--gray / sk-section--dark
-   Inner Group:  sk-container / sk-container--lg / sk-container--xl
+   Pravilo za stranicu:
+   1) Outer Group: sk-section + background klasa
+   2) Inner Group: sk-container + širina
+   3) Unutra bez alignwide / alignfull / contentSize
    ===================================================== */
 
 :root {
@@ -22,6 +24,7 @@
   --sk-white-bg: #ffffff;
 }
 
+/* Outer layer: full-bleed section */
 .entry-content > .sk-section,
 .entry-content > .sk-section-gray,
 .wp-block-post-content > .sk-section,
@@ -36,7 +39,7 @@
 .sk-section-gray {
   width: 100% !important;
   max-width: none !important;
-  margin-inline: 0 !important;
+  margin: 0 !important;
   padding: var(--sk-section-y) 0 !important;
   box-sizing: border-box;
 }
@@ -63,9 +66,8 @@
   background: var(--sk-dark-bg) !important;
 }
 
-.sk-container,
-.sk-section > .container,
-.sk-trust-bar > .container {
+/* Inner layer: only this controls horizontal width */
+.sk-container {
   width: calc(100% - var(--sk-gutter) - var(--sk-gutter)) !important;
   max-width: var(--sk-container-lg) !important;
   margin-left: auto !important;
@@ -85,9 +87,7 @@
   max-width: var(--sk-container-lg) !important;
 }
 
-.sk-container--xl,
-.sk-section-wide > .sk-container,
-.sk-section.sk-section-wide > .container {
+.sk-container--xl {
   max-width: var(--sk-container-xl) !important;
 }
 
@@ -96,42 +96,44 @@
   max-width: none !important;
 }
 
-.sk-container > .wp-block-group__inner-container,
-.container > .wp-block-group__inner-container {
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 !important;
-}
-
-.sk-section > .wp-block-group__inner-container,
-.sk-section-gray > .wp-block-group__inner-container {
-  width: 100% !important;
-  max-width: none !important;
-  margin: 0 !important;
-  padding: 0 !important;
-}
-
-.sk-section > .wp-block-group__inner-container > :where(:not(.alignfull):not(.sk-container):not(.container)),
-.sk-section-gray > .wp-block-group__inner-container > :where(:not(.alignfull):not(.sk-container):not(.container)) {
-  width: calc(100% - var(--sk-gutter) - var(--sk-gutter)) !important;
-  max-width: var(--sk-container-lg) !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  box-sizing: border-box;
-}
-
-.sk-section.sk-section-wide > .wp-block-group__inner-container > :where(:not(.alignfull):not(.sk-container):not(.container)) {
-  max-width: var(--sk-container-xl) !important;
-}
-
-.sk-section > .wp-block-group__inner-container > .alignfull,
-.sk-section-gray > .wp-block-group__inner-container > .alignfull {
+/* Gutenberg blocks inside container must use the container width, not Gutenberg align logic */
+.sk-container > .wp-block-columns,
+.sk-container > .wp-block-gallery,
+.sk-container > .wp-block-group,
+.sk-container > .wp-block-buttons,
+.sk-container > .wp-block-separator,
+.sk-container > .sk-steps-row,
+.sk-container > .sk-stats-row,
+.sk-container > .sk-clients-row,
+.sk-container > .sk-trust-logos,
+.sk-container > .sk-solution-bar {
   width: 100% !important;
   max-width: none !important;
   margin-left: 0 !important;
   margin-right: 0 !important;
+  box-sizing: border-box;
 }
 
+.sk-container > .wp-block-group > .wp-block-group__inner-container {
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+/* Trust bar follows the same rule */
+.sk-trust-bar {
+  padding: 20px 0 !important;
+  box-sizing: border-box;
+}
+
+.sk-trust-bar > .sk-container {
+  width: calc(100% - var(--sk-gutter) - var(--sk-gutter)) !important;
+  max-width: var(--sk-container-lg) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Hero has full background, but the text sits on the same grid */
 .sk-hero-cover .wp-block-cover__inner-container {
   width: calc(100% - var(--sk-gutter) - var(--sk-gutter)) !important;
   max-width: var(--sk-container-xl) !important;
@@ -148,20 +150,7 @@
   max-width: 780px;
 }
 
-.sk-trust-bar {
-  padding: 20px 0 !important;
-  box-sizing: border-box;
-}
-
-.sk-trust-bar > .wp-block-group__inner-container {
-  width: calc(100% - var(--sk-gutter) - var(--sk-gutter)) !important;
-  max-width: var(--sk-container-lg) !important;
-  margin-left: auto !important;
-  margin-right: auto !important;
-  padding: 0 !important;
-  box-sizing: border-box;
-}
-
+/* Legacy helper: no width control here */
 .sk-subsection {
   width: 100% !important;
   max-width: none !important;
@@ -177,12 +166,8 @@
   }
 
   .sk-container,
-  .sk-section > .container,
-  .sk-trust-bar > .container,
-  .sk-hero-cover .wp-block-cover__inner-container,
-  .sk-trust-bar > .wp-block-group__inner-container,
-  .sk-section > .wp-block-group__inner-container > :where(:not(.alignfull):not(.sk-container):not(.container)),
-  .sk-section-gray > .wp-block-group__inner-container > :where(:not(.alignfull):not(.sk-container):not(.container)) {
+  .sk-trust-bar > .sk-container,
+  .sk-hero-cover .wp-block-cover__inner-container {
     width: calc(100% - 40px) !important;
     max-width: none !important;
     min-width: 0 !important;
