@@ -1,0 +1,173 @@
+// =====================================================
+// KORPORATIVNI DOGAĐAJI — CONTACT FORM
+// -----------------------------------------------------
+// Markup: partials/corpo-contact.php
+// Import: scss/style.scss
+// =====================================================
+
+.sk-corp-contact {
+  position: relative;
+  overflow: hidden;
+  background: $color-dark !important;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: -120px;
+    right: -120px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: rgba($color-red, 0.2);
+    filter: blur(8px);
+    pointer-events: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: -160px;
+    bottom: -180px;
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: rgba($color-blue, 0.12);
+    pointer-events: none;
+  }
+
+  > .sk-container {
+    position: relative;
+    z-index: 1;
+  }
+}
+
+.sk-corp-contact__title {
+  color: $color-white !important;
+  font-size: clamp(28px, 4vw, 42px) !important;
+  line-height: 1.1 !important;
+  letter-spacing: -1px !important;
+  font-weight: 800 !important;
+  margin: 0 0 28px !important;
+  text-align: left;
+}
+
+.sk-corp-contact__form {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  width: 100%;
+  padding: clamp(24px, 4vw, 40px);
+  border: 1px solid rgba($color-white, 0.12);
+  border-radius: 18px;
+  background: $color-white;
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.24);
+
+  .input-group {
+    margin: 0;
+  }
+
+  .input-group--full {
+    grid-column: 1 / -1;
+  }
+
+  label {
+    display: block;
+    margin: 0 0 7px;
+    color: $color-text-dark;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  input,
+  select,
+  textarea {
+    width: 100%;
+    min-height: 48px;
+    padding: 12px 14px;
+    border: 1px solid $color-gray-border;
+    border-radius: 10px;
+    background: $color-gray-bg;
+    color: $color-text-dark;
+    font: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.16s ease, box-shadow 0.16s ease, background 0.16s ease;
+  }
+
+  textarea {
+    min-height: 132px;
+    resize: vertical;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: rgba($color-text-dark, 0.42);
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus {
+    border-color: $color-red;
+    background: $color-white;
+    box-shadow: 0 0 0 4px rgba($color-red, 0.1);
+  }
+
+  .input-group.alert {
+    input,
+    select,
+    textarea {
+      border-color: $color-red;
+      background: #fff4f4;
+    }
+  }
+
+  .check {
+    display: none !important;
+  }
+}
+
+.sk-corp-contact__submit {
+  grid-column: 1 / -1;
+  justify-self: start;
+  min-width: 220px;
+  margin-top: 8px;
+  border-radius: 8px !important;
+  border: none !important;
+  background: $color-red !important;
+  color: $color-white !important;
+  padding: 14px 28px !important;
+  font-size: 14px !important;
+  letter-spacing: 0.08em !important;
+  box-shadow: 0 12px 28px rgba($color-red, 0.24);
+
+  &:hover {
+    opacity: 1;
+    transform: translateY(-1px);
+    box-shadow: 0 16px 34px rgba($color-red, 0.3);
+  }
+}
+
+@media (max-width: 640px) {
+  .sk-corp-contact__title {
+    margin-bottom: 22px !important;
+  }
+
+  .sk-corp-contact__form {
+    grid-template-columns: 1fr;
+    padding: 22px;
+    border-radius: 14px;
+
+    .input-group,
+    .input-group--full,
+    .sk-corp-contact__submit {
+      grid-column: 1 / -1;
+    }
+  }
+
+  .sk-corp-contact__submit {
+    width: 100%;
+    justify-self: stretch;
+  }
+}
