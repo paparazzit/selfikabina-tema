@@ -30,7 +30,11 @@ get_header(); ?>
 
     <?php endwhile; ?>
 
-      <?php include 'partials/corpo-contact.php'?>
+      <?php
+if ( is_page( array( 'korporativni-dogadjaji', 'corporate-events', 'corporate events' ) ) ) {
+    get_template_part( 'partials/corpo-contact' );
+}
+?>
 
 </main>
 

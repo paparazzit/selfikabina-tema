@@ -41,10 +41,10 @@
 
 							<select name="event" id="event" data-verify="true">
 								<option value="" selected disabled>Tip dogadjaja</option>
-								<option value="vencanje">Promocija</option>
+								<option value="promocija">Promocija</option>
 								<option value="sajam">Sajam</option>
-								<option value="rodjendan">Godišnjica</option>
-								<option value="rodjendan">Korporativna proslava</option>
+								<option value="godisnjica">Godišnjica</option>
+								<option value="korpo_proslava">Korporativna proslava</option>
 								<option value="ostalo">Ostalo</option>
 							</select>
 						</div>
