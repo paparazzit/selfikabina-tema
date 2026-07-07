@@ -8,7 +8,9 @@
 .sk-corp-contact {
   position: relative;
   overflow: hidden;
-  background: $color-dark !important;
+  // background: white !important;
+  background: white !important;;
+  // padding-top: 0px !important;
 
   // &::before {
   //   content: "";
@@ -23,17 +25,17 @@
   //   pointer-events: none;
   // }
 
-  &::after {
-    content: "";
-    position: absolute;
-    left: -160px;
-    bottom: -180px;
-    width: 360px;
-    height: 360px;
-    border-radius: 50%;
-    background: rgba($color-blue, 0.12);
-    pointer-events: none;
-  }
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   left: -160px;
+  //   bottom: -180px;
+  //   width: 360px;
+  //   height: 360px;
+  //   border-radius: 50%;
+  //   background: rgba($color-blue, 0.12);
+  //   pointer-events: none;
+  // }
 
   > .sk-container {
     position: relative;
@@ -42,7 +44,7 @@
 }
 
 .sk-corp-contact__title {
-  color: $color-white !important;
+  color: #0D1B2A !important;
   font-size: clamp(22px, 3.2vw, 30px) !important;
   line-height: 1.1 !important;
   letter-spacing: -1px !important;
