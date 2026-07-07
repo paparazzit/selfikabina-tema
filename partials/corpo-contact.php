@@ -27,7 +27,7 @@
 						</div>
 
 						<div class="input-group" data-verify="true">
-							<label for="date">Mesto</label>
+							<label for="place">Mesto</label>
 							<input
 								type="text"
 								id="place"
@@ -37,7 +37,7 @@
 							/>
 						</div>
 						<div class="input-group">
-							<label for="date">Tip dogadjaja</label>
+							<label for="event">Tip dogadjaja</label>
 
 							<select name="event" id="event" data-verify="true">
 								<option value="" selected disabled>Tip dogadjaja</option>
