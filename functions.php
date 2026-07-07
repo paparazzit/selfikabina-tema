@@ -103,11 +103,19 @@ function novosti_u_kategorije($query) {
 }
 add_action('pre_get_posts', 'novosti_u_kategorije');
 
-// Corp page JS — tooltip za brand logoe.
-// CSS za corporate page se kompajlira kroz scss/style.scss u glavni style.css.
+// Corp page assets — tooltip za brand logoe i kontakt forma.
+// Glavni corporate CSS se kompajlira kroz scss/style.scss u style.css.
 function sk_corp_page_scripts() {
     if ( is_front_page() || is_page( 'korporativni-dogadjaji' ) || is_page('corporate events') || is_page('corporate-events') ) {
         $corp_page_js_path = get_template_directory() . '/js/corp-page.js';
+        $corp_contact_css_path = get_template_directory() . '/assets/css/corpo-contact.css';
+
+        wp_enqueue_style(
+            'sk-corp-contact-css',
+            get_template_directory_uri() . '/assets/css/corpo-contact.css',
+            array('main_style'),
+            file_exists($corp_contact_css_path) ? filemtime($corp_contact_css_path) : '1.0'
+        );
 
         wp_enqueue_script(
             'sk-corp-page-js',
