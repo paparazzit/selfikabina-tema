@@ -30,6 +30,8 @@ get_header(); ?>
 
     <?php endwhile; ?>
 
+      <?php include 'partials/corpo-contact.php'?>
+
 </main>
 
 <?php get_footer(); ?>
