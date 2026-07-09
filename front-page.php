@@ -358,6 +358,7 @@
                 Sve novosti
             </a>
         </div>
+		 
 
         <div class="hp-novosti-grid">
             <?php

@@ -16,8 +16,8 @@ if ($novosti_tip_terms && !is_wp_error($novosti_tip_terms)) {
     $novosti_tip_string = implode(' ', $novosti_tip_values);
 
     if (
-        strpos($novosti_tip_string, 'poslovni') !== false ||
-        strpos($novosti_tip_string, 'corporate') !== false ||
+        strpos($novosti_tip_string, 'poslovn') !== false ||
+        strpos($novosti_tip_string, 'corpo') !== false ||
         strpos($novosti_tip_string, 'korporativ') !== false
         
     ) {
