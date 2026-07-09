@@ -96,6 +96,7 @@ body.loaded {
   .container {
     width: 100%;
     min-width: unset;
+    padding: 0 15px;
   }
 }
 
@@ -2663,6 +2664,11 @@ section.hp-novosti .hp-novosti-head h2 {
   letter-spacing: 3px;
   text-transform: uppercase;
 }
+@media (max-width: 580px) {
+  section.hp-novosti .hp-novosti-head a.hide_mobile {
+    display: none;
+  }
+}
 section.hp-novosti .hp-novosti-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -2676,6 +2682,15 @@ section.hp-novosti .hp-novosti-grid {
 @media (max-width: 580px) {
   section.hp-novosti .hp-novosti-grid {
     grid-template-columns: 1fr;
+  }
+}
+section.hp-novosti .show_mobile {
+  display: none;
+}
+@media (max-width: 580px) {
+  section.hp-novosti .show_mobile {
+    display: inline-block;
+    margin: 20px auto;
   }
 }
 
@@ -2783,6 +2798,27 @@ section.hp-novosti .hp-novosti-grid {
 }
 .ncard .ncard-body .ncard-meta span a:hover {
   color: #fbc9c9;
+}
+
+@media (max-width: 580px) {
+  section.hp-novosti .hp-novosti-head {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 22px;
+    margin-bottom: 26px;
+  }
+  section.hp-novosti .hp-novosti-head h2 {
+    font-size: 1.65rem;
+    line-height: 1.1;
+  }
+  section.hp-novosti .hp-novosti-head h2.underline::after {
+    width: 100%;
+  }
+  section.hp-novosti .hp-novosti-head .btn {
+    align-self: flex-start;
+    width: fit-content;
+  }
 }
 
 header.header_novosti.novosti-single-header {

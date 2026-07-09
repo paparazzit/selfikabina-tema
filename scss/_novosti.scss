@@ -468,6 +468,14 @@ section.hp-novosti {
             letter-spacing: 3px;
             text-transform: uppercase;
         }
+        a{
+           &.hide_mobile {
+                @media (max-width: 580px) {
+                    display: none;
+                }
+            }
+        }
+        
     }
 
     .hp-novosti-grid {
@@ -477,6 +485,13 @@ section.hp-novosti {
 
         @media (max-width: 900px) { grid-template-columns: repeat(2, 1fr); }
         @media (max-width: 580px) { grid-template-columns: 1fr; }
+    }
+    .show_mobile {
+       display: none;
+       @media (max-width: 580px) {
+            display: inline-block;
+            margin: 20px auto;
+        }
     }
 }
 

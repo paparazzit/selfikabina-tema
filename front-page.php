@@ -354,7 +354,7 @@
 
         <div class="hp-novosti-head">
             <h2 class="underline">Novosti</h2>
-            <a href="<?php echo esc_url(home_url('/novosti')); ?>" class="btn btn-red">
+            <a href="<?php echo esc_url(home_url('/novosti')); ?>" class="btn btn-red hide_mobile">
                 Sve novosti
             </a>
         </div>
@@ -401,6 +401,9 @@
             endif;
             ?>
         </div>
+		<a href="<?php echo esc_url(home_url('/novosti')); ?>" class="btn btn-red show_mobile">
+                Sve novosti
+            </a>
 
     </div>
 </section>
