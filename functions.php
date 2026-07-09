@@ -2,7 +2,6 @@
 
 require get_theme_file_path('./inc_f/mailSender.php');
 require get_theme_file_path('./inc_f/customPostTypes.php');
-require get_theme_file_path('./inc_f/corporateNovostiLoop.php');
 
 // SETUP TEME
 function photoBooth_theme_support(){
