@@ -1,0 +1,42 @@
+// =====================================================
+// HOME PAGE NOVOSTI — MOBILE HEADER FIX
+// -----------------------------------------------------
+// Lokacija u template-u:
+// front-page.php -> section.hp-novosti -> .hp-novosti-head
+//
+// Problem:
+// Na manjim ekranima naslov "Novosti" i CTA dugme "Sve novosti"
+// stoje u istom flex redu, pa dugme nema dovoljno prostora.
+//
+// Rešenje:
+// Na mobilnom slažemo naslov i dugme jedno ispod drugog.
+// Ovo ostavlja desktop layout netaknutim.
+// =====================================================
+
+section.hp-novosti {
+    @media (max-width: 580px) {
+        .hp-novosti-head {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 22px;
+            margin-bottom: 26px;
+        }
+
+        .hp-novosti-head h2 {
+            font-size: 1.65rem;
+            line-height: 1.1;
+        }
+
+        // Globalna .underline klasa ima width: 110%.
+        // Ovde je vraćamo na 100% da linija ne beži previše na uskim ekranima.
+        .hp-novosti-head h2.underline::after {
+            width: 100%;
+        }
+
+        .hp-novosti-head .btn {
+            align-self: flex-start;
+            width: fit-content;
+        }
+    }
+}
