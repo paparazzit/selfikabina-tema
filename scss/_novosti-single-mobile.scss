@@ -1,0 +1,15 @@
+// SINGLE NOVOSTI - MOBILE CONTENT WIDTH
+// Keeps the desktop article width unchanged while giving the text more room on phones.
+@media (max-width: 580px) {
+    section.novosti-single {
+        .container {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        article .text-content {
+            width: 100%;
+            max-width: none;
+        }
+    }
+}
