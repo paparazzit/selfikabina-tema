@@ -11,7 +11,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<meta name="keywords" content="fotokabina, selfikabina, photobooth, selfi kabina, foto kabina, foto rekviziti, vencanje, korporativni dogadjaji, photo wall" />
 		<meta name="description" content="Rentiranje Foto Kabine za venčanja, proslave i korporativne događaje. Instant foto print." />
-
+		<link rel="alternate" type="text/markdown" title="LLM-friendly version" href="https://www.selfikabina.com/llms.txt" />
 		<link
 
 			rel="stylesheet"
