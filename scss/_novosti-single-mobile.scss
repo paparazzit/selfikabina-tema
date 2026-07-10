@@ -3,8 +3,8 @@
 @media (max-width: 580px) {
     section.novosti-single {
         .container {
-            padding-left: 15px;
-            padding-right: 15px;
+            padding-left: 0px !important;
+            padding-right: 0px !important;
         }
 
         article .text-content {

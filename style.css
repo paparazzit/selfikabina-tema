@@ -1825,6 +1825,14 @@ section.opt_post .container article .text-content .btn {
     margin: 0 auto;
   }
 }
+@media (max-width: 580px) {
+  section.opt_post {
+    margin-bottom: 50px;
+  }
+  section.opt_post .container article .text-content {
+    padding: 0px 0px;
+  }
+}
 
 header.header_posts {
   background-color: #fbc9c9;
@@ -2902,6 +2910,16 @@ header.header_novosti.novosti-single-header > img {
   line-height: 1;
 }
 
+@media (max-width: 580px) {
+  section.novosti-single .container {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+  section.novosti-single article .text-content {
+    width: 100%;
+    max-width: none;
+  }
+}
 .sk-hero-cover {
   min-height: 92vh !important;
   position: relative;

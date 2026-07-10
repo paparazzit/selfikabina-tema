@@ -105,4 +105,14 @@ section.opt_post {
 			}
 		}
 	}
+	@media (max-width: 580px) {
+		margin-bottom: 50px;
+		.container {
+			article {
+				.text-content {
+					padding: 0px 0px;
+				}
+			}
+		}
+	}
 }
