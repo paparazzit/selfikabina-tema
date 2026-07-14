@@ -2830,6 +2830,8 @@ section.hp-novosti .show_mobile {
 }
 
 header.header_novosti.novosti-single-header {
+  position: relative;
+  overflow: hidden;
   min-height: 25vh;
   display: flex;
   align-items: center;
