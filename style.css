@@ -1886,6 +1886,7 @@ header.header_posts img {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  flex-direction: column;
   gap: 50px;
   padding-bottom: 100px;
 }
