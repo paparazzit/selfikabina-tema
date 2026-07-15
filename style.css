@@ -1774,6 +1774,7 @@ section.opt_post .container article {
 section.opt_post .container article .img_wrapper {
   flex: 0 0 30%;
   min-width: 300px;
+  align-self: flex-start;
 }
 section.opt_post .container article .img_wrapper img {
   width: 100%;

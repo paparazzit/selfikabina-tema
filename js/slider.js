@@ -89,7 +89,7 @@ let sliderProp = {
 	next: "next",
 	prev: "prev",
 	indicators: "indicators",
-	autoplay: 7000000,
+	autoplay: 5000,
 };
 
 let slider = document.querySelector("#slider");
