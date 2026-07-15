@@ -56,7 +56,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 					<img
 
-						src="<?php echo esc_url(get_template_directory_uri());?>/assets/header/LOGO NO WORDS.png"
+						src="<?php echo esc_url(get_template_directory_uri());?>/assets/header/selfikabina-logo-header.png"
 
 					
 
