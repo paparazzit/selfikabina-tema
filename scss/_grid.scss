@@ -57,6 +57,10 @@ section.thirds {
 					background-color: $red;
 					transform: translateY(100%);
 				}
+				&[data-link="keychain"] {
+					background-color: #f84791;
+					transform: translateY(-100%);
+				}
 				&.active {
 					transform: translate(0, 0);
 					transition: 0.3s all ease-in-out;
@@ -154,6 +158,9 @@ section.thirds {
 			}
 			&.sending {
 				background: #57dbd8;
+			}
+			&.keychain {
+				background: #f9b8b1;
 			}
 		}
 		.bottom {

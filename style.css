@@ -689,6 +689,10 @@ section.thirds .left .top article[data-link=sending] {
   background-color: #fe6257;
   transform: translateY(100%);
 }
+section.thirds .left .top article[data-link=keychain] {
+  background-color: #f84791;
+  transform: translateY(-100%);
+}
 section.thirds .left .top article.active {
   transform: translate(0, 0);
   transition: 0.3s all ease-in-out;
@@ -780,6 +784,9 @@ section.thirds .right .top.boomerang {
 }
 section.thirds .right .top.sending {
   background: #57dbd8;
+}
+section.thirds .right .top.keychain {
+  background: #f9b8b1;
 }
 section.thirds .right .bottom {
   flex: 0 0 66.66%;
